@@ -7,3 +7,6 @@
 body {
     background-color: #f8f8f9;
 }
+html,body {
+    width: 100%;
+}

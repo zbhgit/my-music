@@ -1,0 +1,62 @@
+.music_list {
+  .recommend {
+    .recommend_title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      line-height: 40px;
+      .text {
+        color: #323233;
+        margin: 0 6px 0 10px;
+      }
+      .icon-right {
+        color: #676767;
+        margin-bottom: 3px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 2px;
+        height: 20px;
+        transform: translateY(-50%);
+        background-color: #d33a31;
+      }
+
+
+    }
+  }
+
+}
+
+.recommend_item--wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .item {
+    position: relative;
+    width: 123px;
+    text-decoration: none;
+    color: #323233;
+    img {
+      width: 100%;
+    }
+    .listen_count {
+      position: absolute;
+      top:4px;
+      right:8px;
+      color: #ffffff;
+      font-size: 12px;
+      .icon-listen {
+        font-size: 12px;
+      }
+    }
+    .description {
+      padding:6px 6px 10px 6px;
+      line-height:16px;
+      font-size:13px;
+    }
+  }
+}
