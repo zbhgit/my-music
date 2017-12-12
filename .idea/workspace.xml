@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="564ce60b-a026-4ae8-816b-bcc6507d5062" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/home/music_list/music_list.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/font/iconfont.eot" afterPath="$PROJECT_DIR$/src/assets/font/iconfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/font/iconfont.ttf" afterPath="$PROJECT_DIR$/src/assets/font/iconfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/font/iconfont.woff" afterPath="$PROJECT_DIR$/src/assets/font/iconfont.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/iconfont.css" afterPath="$PROJECT_DIR$/src/assets/css/iconfont.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/index.css" afterPath="$PROJECT_DIR$/src/assets/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/font/iconfont.svg" afterPath="$PROJECT_DIR$/src/assets/font/iconfont.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" afterPath="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/music_list/music_list.scss" afterPath="$PROJECT_DIR$/src/pages/home/music_list/music_list.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,63 +27,43 @@
       <file leaf-file-name="music_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+            <state relative-caret-position="270">
+              <caret line="150" column="24" lean-forward="true" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="37" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#228#384#0" expanded="false" />
-                <element signature="e#865#1289#0" expanded="false" />
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#191#3013#0" expanded="false" />
+                <element signature="e#866#1289#0" expanded="false" />
                 <element signature="e#1302#1709#0" expanded="false" />
-                <element signature="e#1722#2136#0" expanded="false" />
-                <element signature="e#2149#2556#0" expanded="false" />
-                <element signature="e#2569#2982#0" expanded="false" />
+                <element signature="e#1722#2135#0" expanded="false" />
+                <element signature="e#2148#2555#0" expanded="false" />
+                <element signature="e#2568#2981#0" expanded="false" />
+                <element signature="e#3022#6862#0" expanded="false" />
+                <element signature="e#3124#3457#0" expanded="false" />
+                <element signature="e#3470#3880#0" expanded="false" />
+                <element signature="e#3893#4264#0" expanded="false" />
+                <element signature="e#4277#4605#0" expanded="false" />
+                <element signature="e#4618#4951#0" expanded="false" />
+                <element signature="e#4964#5374#0" expanded="false" />
+                <element signature="e#5387#5758#0" expanded="false" />
+                <element signature="e#5771#6104#0" expanded="false" />
+                <element signature="e#6118#6489#0" expanded="false" />
+                <element signature="e#6502#6830#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="music_list.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="music_list.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <state relative-caret-position="616">
+              <caret line="136" column="22" lean-forward="true" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
               <folding>
-                <element signature="e#183#246#0" expanded="false" />
-                <element signature="e#265#326#0" expanded="false" />
-                <element signature="e#342#549#0" expanded="false" />
-                <element signature="e#770#796#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iconfont.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/assets/css/iconfont.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-              <folding>
-                <element signature="e#201#5214#1" expanded="true" />
+                <element signature="e#288#349#0" expanded="false" />
+                <element signature="e#614#1112#0" expanded="false" />
+                <element signature="e#1137#2225#0" expanded="false" />
+                <element signature="e#1154#1472#0" expanded="false" />
+                <element signature="e#1478#2223#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -96,6 +78,11 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sq</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,11 +103,11 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/pages/home/header/header.js" />
         <option value="$PROJECT_DIR$/src/pages/home/header/header.scss" />
+        <option value="$PROJECT_DIR$/src/assets/css/index.css" />
+        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/assets/css/iconfont.css" />
         <option value="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" />
         <option value="$PROJECT_DIR$/src/pages/home/music_list/music_list.scss" />
-        <option value="$PROJECT_DIR$/src/assets/css/index.css" />
-        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -136,9 +123,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="533" />
+    <option name="x" value="980" />
     <option name="y" value="28" />
-    <option name="width" value="1219" />
+    <option name="width" value="941" />
     <option name="height" value="1044" />
   </component>
   <component name="ProjectView">
@@ -286,6 +273,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="font" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -327,6 +336,7 @@
       <recent name="E:\react\my_music\src\pages\home\header" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\react\my_music\src\assets\css" />
       <recent name="E:\react\my_music\src\assets\font" />
       <recent name="E:\react\my_music\src\pages\home\music_list" />
     </key>
@@ -415,18 +425,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513058609878</updated>
-      <workItem from="1513058613437" duration="20510000" />
+      <workItem from="1513058613437" duration="27109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20510000" />
+    <option name="totallyTimeSpent" value="27109000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="533" y="28" width="1219" height="1044" extended-state="0" />
+    <frame x="980" y="28" width="941" height="1044" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42929292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -434,7 +444,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -594,7 +604,7 @@
         <state relative-caret-position="150">
           <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -623,42 +633,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/iconfont.css">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding>
-            <element signature="e#201#5214#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#228#384#0" expanded="false" />
-            <element signature="e#865#1289#0" expanded="false" />
-            <element signature="e#1302#1709#0" expanded="false" />
-            <element signature="e#1722#2136#0" expanded="false" />
-            <element signature="e#2149#2556#0" expanded="false" />
-            <element signature="e#2569#2982#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding>
-            <element signature="e#183#246#0" expanded="false" />
-            <element signature="e#265#326#0" expanded="false" />
-            <element signature="e#342#549#0" expanded="false" />
-            <element signature="e#770#796#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,11 +649,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$USER_HOME$/Downloads/download (1)/font_506580_4cgecksjnrrdaemi/iconfont.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="47" lean-forward="true" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+        <state relative-caret-position="146">
+          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/iconfont.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="150" column="24" lean-forward="true" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#191#3013#0" expanded="false" />
+            <element signature="e#866#1289#0" expanded="false" />
+            <element signature="e#1302#1709#0" expanded="false" />
+            <element signature="e#1722#2135#0" expanded="false" />
+            <element signature="e#2148#2555#0" expanded="false" />
+            <element signature="e#2568#2981#0" expanded="false" />
+            <element signature="e#3022#6862#0" expanded="false" />
+            <element signature="e#3124#3457#0" expanded="false" />
+            <element signature="e#3470#3880#0" expanded="false" />
+            <element signature="e#3893#4264#0" expanded="false" />
+            <element signature="e#4277#4605#0" expanded="false" />
+            <element signature="e#4618#4951#0" expanded="false" />
+            <element signature="e#4964#5374#0" expanded="false" />
+            <element signature="e#5387#5758#0" expanded="false" />
+            <element signature="e#5771#6104#0" expanded="false" />
+            <element signature="e#6118#6489#0" expanded="false" />
+            <element signature="e#6502#6830#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="136" column="22" lean-forward="true" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
+          <folding>
+            <element signature="e#288#349#0" expanded="false" />
+            <element signature="e#614#1112#0" expanded="false" />
+            <element signature="e#1137#2225#0" expanded="false" />
+            <element signature="e#1154#1472#0" expanded="false" />
+            <element signature="e#1478#2223#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
