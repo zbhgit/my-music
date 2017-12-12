@@ -9,19 +9,26 @@ class Carousel extends Component {
     return (
       <div className="carousel-wrapper">
         <ReactSwipe className="carousel" swipeOptions={{continuous: true}}>
-          <img src="http://p1.music.126.net/tm1BTYNBhJ5FxYAF_idE1g==/19205169602856143.jpg" alt=""/>
-          <img src="http://p1.music.126.net/tm1BTYNBhJ5FxYAF_idE1g==/19205169602856143.jpg" alt=""/>
+          <div className="imgWrapper">
+            <img src="http://p1.music.126.net/tm1BTYNBhJ5FxYAF_idE1g==/19205169602856143.jpg" alt=""/>
+            <span className="tag">首发</span>
+          </div>
+          <div className="imgWrapper">
+            <img src="http://p1.music.126.net/vvZLXI5EqFLsKLlvfqz0uA==/19088621370291879.jpg" alt=""/>
+            <span className="tag">首发</span>
+          </div>
 
-          <img src="http://p1.music.126.net/tm1BTYNBhJ5FxYAF_idE1g==/19205169602856143.jpg" alt=""/>
+          <div className="imgWrapper">
+            <img src="http://p1.music.126.net/RG1oaC3Tilp1JNagbxOzIw==/19120507207519843.jpg" alt=""/>
+            <span className="tag">首发</span>
+          </div>
+
         </ReactSwipe>
         <ul className="point">
           <li className="active"></li>
           <li></li>
           <li></li>
         </ul>
-        <div className="tag">
-          首发
-        </div>
       </div>
     )
   }

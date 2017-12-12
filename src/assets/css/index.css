@@ -1,5 +1,6 @@
 @import url('reset.css');
 @import url('normalize.css');
+@import "iconfont.css";
 * {
     box-sizing: border-box;
 }
