@@ -14,7 +14,7 @@ class Nav extends Component {
           <span className="text">热歌榜</span>
         </li>
         <li>
-          <span className="text">搜索</span>
+          <span className="text">专辑</span>
         </li>
       </ul>
     )

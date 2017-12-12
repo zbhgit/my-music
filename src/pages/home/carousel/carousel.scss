@@ -1,0 +1,34 @@
+.carousel-wrapper {
+  position: relative;
+  .point {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    display: flex;
+    transform: translateX(-50%);
+    li {
+      height: 6px;
+      width: 6px;
+      margin:0 2px;
+      border-radius: 3px;
+      background-color: #89898b;
+      &.active {
+        background-color: #d33a31;
+      }
+    }
+  }
+  .tag {
+    font-size:12px;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    color: #ffffff;
+    line-height: 20px;
+    padding:0 6px 0 10px;
+    background-color: #c0362e;
+    border-radius:10px 0 0 10px;
+  }
+}
+.carousel {
+  width: 100%;
+}
