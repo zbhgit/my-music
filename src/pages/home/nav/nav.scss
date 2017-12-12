@@ -1,0 +1,27 @@
+.home_nav {
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+  align-items:center;
+  border-bottom:1px solid #cccccc;
+  li {
+    flex:1;
+    text-align: center;
+    height:100%;
+    span {
+      position: relative;
+      display: inline-block;
+      line-height:40px;
+      padding:0 12px;
+      &.active:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: -1px;
+        height:4px;
+        width:100%;
+        border-bottom: 3px solid #d33a31;
+      }
+    }
+  }
+}
