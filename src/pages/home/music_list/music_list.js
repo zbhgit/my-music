@@ -11,7 +11,7 @@ class MusicList extends Component {
             <span className="icon iconfont icon-right"></span>
           </div>
           <div className="recommend_item--wrapper">
-            <a href="javascript:;" className="item">
+            <a href="#" className="item">
               <img src="http://p1.music.126.net/uXbDB1aWsp36_I_lQs-DeA==/1411772930113118.jpg" alt="歌单封面"/>
               <div className="listen_count">
                 <span className="icon iconfont icon-listen"></span>
@@ -19,7 +19,7 @@ class MusicList extends Component {
               </div>
               <p className="description">华语速爆新歌</p>
             </a>
-            <a href="javascript:;" className="item">
+            <a href="#" className="item">
               <img src="http://p1.music.126.net/ZC9Kj6a7NkNSs-CZ4JdS1g==/109951162964281524.jpg" alt="歌单封面"/>
               <div className="listen_count">
                 <span className="icon iconfont icon-listen"></span>
@@ -27,7 +27,7 @@ class MusicList extends Component {
               </div>
               <p className="description">• Soul/Reggae｜灵歌遇上了雷鬼?</p>
             </a>
-            <a href="javascript:;" className="item">
+            <a href="#" className="item">
               <img src="http://p1.music.126.net/K_q4k-f7b0dXkytaDN0MTQ==/528865150111579.jpg" alt="歌单封面"/>
               <div className="listen_count">
                 <span className="icon iconfont icon-listen"></span>
@@ -35,7 +35,7 @@ class MusicList extends Component {
               </div>
               <p className="description">低吟浅唱丨我温暖的忧郁</p>
             </a>
-            <a href="javascript:;" className="item">
+            <a href="#" className="item">
               <img src="http://p1.music.126.net/rhbxWUndbuKfZme4IiYplw==/3428277255764485.jpg" alt="歌单封面"/>
               <div className="listen_count">
                 <span className="icon iconfont icon-listen"></span>
@@ -43,7 +43,7 @@ class MusicList extends Component {
               </div>
               <p className="description">北欧后摇氛围,如梦似幻的落寞之旅</p>
             </a>
-            <a href="javascript:;" className="item">
+            <a href="#" className="item">
               <img src="http://p1.music.126.net/spPPE5PzbULCzw1LfMgKlg==/3401888989102801.jpg" alt="歌单封面"/>
               <div className="listen_count">
                 <span className="icon iconfont icon-listen"></span>
@@ -51,7 +51,7 @@ class MusicList extends Component {
               </div>
               <p className="description">和风｜物哀，如得其情</p>
             </a>
-            <a href="javascript:;" className="item">
+            <a href="#" className="item">
               <img src="http://p1.music.126.net/69UvJeww927sMtnjfwlO0Q==/1371091002111924.jpg" alt="歌单封面"/>
               <div className="listen_count">
                 <span className="icon iconfont icon-listen"></span>
