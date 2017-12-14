@@ -11,10 +11,10 @@ class Nav extends Component {
           <span className="text active">推荐音乐</span>
         </li>
         <li>
-          <span className="text">热歌榜</span>
+          <span className="text">热门歌手</span>
         </li>
         <li>
-          <span className="text">专辑</span>
+          <span className="text">排行榜</span>
         </li>
       </ul>
     )
