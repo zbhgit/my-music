@@ -1,0 +1,28 @@
+.official_rank {
+  .official_item {
+    display: flex;
+    align-items: center;
+    .official_item-list {
+      padding:12px 10px;
+      flex:1;
+      line-height:33px;
+      font-size:14px;
+      color: #646566;
+      border-bottom: 1px solid #e2e3e4;
+    }
+  }
+}
+.global_rank {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .global_rank-item {
+    padding-bottom: 20px;
+    width: 32.8vw;
+    .rank_name{
+      padding: 0 8px;
+      font-size:12px;
+      line-height: 14px;
+    }
+  }
+}

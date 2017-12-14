@@ -3,4 +3,6 @@
  */
 import Home from './home'
 import HotSinger from './hot_singer'
-export {Home,HotSinger}
+import RankList from './rank'
+
+export {Home,HotSinger,RankList}

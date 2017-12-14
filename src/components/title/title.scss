@@ -1,0 +1,23 @@
+
+.title {
+  position: relative;
+  font-size: 15px;
+  color: #323233;
+  padding: 20px 10px;
+  font-weight: 500;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 15px;
+    background-color: #d33a31;
+  }
+  .icon-right {
+    font-size:15px;
+    padding-left:7px;
+    color: #666666;
+  }
+}

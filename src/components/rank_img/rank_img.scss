@@ -1,0 +1,17 @@
+.rank_img {
+  position: relative;
+  margin-bottom:3px;
+  height: 124px;
+  width: 124px;
+  img {
+    width: 100%;
+    height:100%;
+  }
+  .time {
+    position: absolute;
+    left: 6px;
+    bottom: 8px;
+    color: #ffffff;
+    font-size:12px;
+  }
+}
