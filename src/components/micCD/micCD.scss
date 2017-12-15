@@ -1,0 +1,12 @@
+.micCD {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20px;
+  i {
+    display: inline-block;
+    width: 2px;
+    height: 20px;
+    background: #333333;
+  }
+}

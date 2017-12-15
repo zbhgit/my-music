@@ -1,0 +1,14 @@
+.detail_header {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  height: 43px;
+  color: #f8f8f9;
+  padding: 0 15px;
+  .icon-left {
+    font-size: 22px;
+  }
+  .detail_title {
+    font-size:18px;
+  }
+}

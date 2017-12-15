@@ -1,0 +1,13 @@
+.countWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  .iconfont {
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .count {
+    font-size:12px;
+  }
+}

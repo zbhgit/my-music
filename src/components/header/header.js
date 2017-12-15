@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './header.scss'
+import MicCD from 'components/micCD/micCD'
 class Header extends Component {
   render() {
     return (
@@ -9,12 +10,7 @@ class Header extends Component {
           <span className="icon iconfont icon-search"></span>
           <input type="text" placeholder="搜索音乐、专辑、歌手"/>
         </div>
-        <span className="micCD">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-        </span>
+        <MicCD/>
       </div>
     )
   }
