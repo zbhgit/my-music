@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Item from 'components/song_item/item'
 import './music_list.scss'
 class MusicList extends Component {
   render() {
@@ -64,87 +65,39 @@ class MusicList extends Component {
         <div className="new_song">
           <h3 className="song_title">最新音乐</h3>
           <ul >
-            <li className="song_item">
-              <h3 className="song_name">时代的标记</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >汪峰 - 果岭里29号</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={false} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">Boys (Howie Lee Remix)</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >Charli XCX / Jeanie / Howie Lee - Boys 中文版 ft. Jeanie (Howie Lee Remix)</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={true} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">发烧 (FEVER IN THE DESERT)</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >Kafe.Hu - KAFREEMAN Part Three</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={false} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">超哥嗦</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >谢帝 - 超哥嗦</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={true} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">时代的标记</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >汪峰 - 果岭里29号</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={false} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">Boys (Howie Lee Remix)</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >Charli XCX / Jeanie / Howie Lee - Boys 中文版 ft. Jeanie (Howie Lee Remix)</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={true} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">发烧 (FEVER IN THE DESERT)</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >Kafe.Hu - KAFREEMAN Part Three</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={false} />
             </li>
-            <li className="song_item">
-              <h3 className="song_name">时代的标记</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >汪峰 - 果岭里29号</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={true} />
+            </li>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={false} />
+            </li>
+            <li>
+              <Item name={"Boys (Howie Lee Remix)"} artist={"Charli XCX / Jeanie / Howie Lee"} album={"Boys 中文版 ft. Jeanie (Howie Lee Remix)"} sq={true} />
             </li>
 
-            <li className="song_item">
-              <h3 className="song_name">发烧 (FEVER IN THE DESERT)</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >Kafe.Hu - KAFREEMAN Part Three</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
-            </li>
-            <li className="song_item">
-              <h3 className="song_name">超哥嗦</h3>
-              <div className="song_artist">
-                <span className="icon iconfont icon-sq"> </span>
-                <span >谢帝 - 超哥嗦</span>
-              </div>
-              <span className="icon iconfont icon-play01"></span>
-            </li>
+
+
 
           </ul>
         </div>

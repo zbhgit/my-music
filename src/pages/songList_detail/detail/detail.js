@@ -11,7 +11,7 @@ export default class Detail extends Component {
       <div className="detail">
         <div className="detail_description">
           <div className="imgWrapper">
-            <img src="http://p1.music.126.net/uXbDB1aWsp36_I_lQs-DeA==/1411772930113118.jpg"/>
+            <img src="http://p1.music.126.net/uXbDB1aWsp36_I_lQs-DeA==/1411772930113118.jpg" alt="描述照片"/>
             <div className="listen_count">
               <span className="icon iconfont icon-listen"></span>
               <span> 444万</span>

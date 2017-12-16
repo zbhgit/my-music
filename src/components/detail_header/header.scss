@@ -1,10 +1,12 @@
 .detail_header {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items:center;
   height: 43px;
   color: #f8f8f9;
   padding: 0 15px;
+  background-color: rgba(0,0,0,.4);
   .icon-left {
     font-size: 22px;
   }

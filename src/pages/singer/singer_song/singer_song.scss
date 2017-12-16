@@ -1,0 +1,12 @@
+.singer_song {
+  ul {
+    .singer_song-item {
+      display: flex;
+      align-items: center;
+      .index {
+        width: 44px;
+        text-align: center;
+      }
+    }
+  }
+}

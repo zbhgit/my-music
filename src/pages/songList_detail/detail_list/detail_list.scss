@@ -1,0 +1,31 @@
+.detail_list {
+  .play_all {
+    display: flex;
+    align-items:center;
+    .icon-play01 {
+      margin:0 10px;
+      font-size:20px;
+      color: #363636;
+    }
+    .text {
+      flex:1;
+      padding:15px 0;
+      font-size:16px;
+      color: #323233;
+      border-bottom:1px solid #e2e3e4;
+      .list_count {
+        color: #979798;
+      }
+    }
+  }
+  ul {
+    .item_wrapper {
+      display: flex;
+      align-items: center;
+      .index {
+        width: 44px;
+        text-align: center;
+      }
+    }
+  }
+}
