@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './player_header.scss'
 export default class PlayerHeader extends Component {
   render() {
     return (

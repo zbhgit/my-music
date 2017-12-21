@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Home,HotSinger,RankList,SongDetail,Singer} from './pages'
+import {Home,HotSinger,RankList,SongDetail,Singer,Player} from './pages'
 import registerServiceWorker from './registerServiceWorker';
 
 import './assets/css/index.css'
-ReactDOM.render(<Singer />, document.getElementById('root'));
+ReactDOM.render(<Player />, document.getElementById('root'));
 registerServiceWorker();
