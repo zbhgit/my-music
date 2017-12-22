@@ -1,0 +1,23 @@
+.hot_search {
+  .hot_item-wrapper {
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    .hot_item {
+      padding: 0 14px;
+      line-height: 31px;
+      border: 1px solid #d3d4da;
+      border-radius: 31px;
+      font-size: 12px;
+      color: #373737;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.search_result {
+  ul {
+    padding-left: 10px;
+  }
+}

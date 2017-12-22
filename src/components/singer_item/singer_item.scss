@@ -1,0 +1,27 @@
+.singer_item {
+  width: 100%;
+  display: flex;
+  align-items:center;
+  padding:8px 0 8px 8px;
+  border-bottom:1px solid #e3e3e4;
+  .singer_img {
+    width: 50px;
+    height: 50px;
+    margin-right:16px;
+  }
+  .singer_name {
+    margin-right:auto;
+    color: #333333;
+    font-size:16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span {
+      color: #507daf;
+    }
+  }
+  .icon-right {
+    padding-right: 15px;
+    color: #9b9b9b;
+  }
+}

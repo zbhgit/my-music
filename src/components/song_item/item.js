@@ -22,7 +22,6 @@ export default class Item extends Component {
         <span className="icon iconfont icon-play01">
         </span>
       </div>
-
     )
   }
 }
