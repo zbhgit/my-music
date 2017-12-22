@@ -20,6 +20,24 @@ export default class Disc extends Component {
           <img src={discImg} alt=""/>
           <img src={disc_light} alt=""/>
         </div>
+        <div className="control-wrapper">
+          <div className="control-bar">
+            <span className="current-time">00:29</span>
+            <div className="bar-wrapper">
+              <div className="bar-back"></div>
+              <div className="bar-frond"></div>
+              <div className="bar-circle"></div>
+            </div>
+            <span className="total-time">03:59</span>
+          </div>
+          <div className="control-button">
+            <span className="icon iconfont icon-loop"></span>
+            <span className="icon iconfont icon-prev"></span>
+            <span className="icon iconfont icon-play01"></span>
+            <span className="icon iconfont icon-next"></span>
+            <span className="icon iconfont icon-play-list"></span>
+          </div>
+        </div>
       </div>
     )
   }

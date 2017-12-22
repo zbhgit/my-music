@@ -1,32 +1,32 @@
 .disc {
   width: 100%;
-  height:100vh;
-  border-top:1px solid #323337;
+  overflow: hidden;
+  border-top: 1px solid #323337;
   position: relative;
   .half {
     position: absolute;
     left: 50%;
-    top:-1px;
+    top: -1px;
     transform: translateX(-50%);
     width: 26px;
-    z-index:5;
+    z-index: 5;
   }
   .needle {
     position: absolute;
     left: 50%;
     transform-origin: 2px -6px;
-    margin-left:-6px;
-    top:6px;
+    margin-left: -6px;
+    top: 6px;
     width: auto;
-    height:150px;
+    height: 150px;
     z-index: 4;
   }
   .circle-cd {
     position: relative;
-    margin:0 auto;
-    margin-top:80px;
-    width:305px;
-    height:305px;
+    margin: 0 auto;
+    margin-top: 80px;
+    width: 305px;
+    height: 305px;
     border-radius: 50%;
     overflow: hidden;
     img {
@@ -40,6 +40,72 @@
       }
       &:last-child {
         z-index: 3;
+      }
+    }
+  }
+  .control-wrapper {
+    color: #fff;
+    .control-bar {
+      display: flex;
+      align-items: center;
+      margin-top: 95px;
+      .current-time {
+        margin: 0 15px 0 12px;
+        font-size: 12px;
+        color: #ced1e0;
+      }
+      .total-time {
+        margin: 0 12px 0 15px;
+        font-size: 12px;
+        color: #c4a68e;
+      }
+      .bar-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        .bar-back {
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          height: 2px;
+          border-radius: 4px;
+          background-color: #b29b89;
+        }
+        .bar-frond {
+          position: absolute;
+          z-index: 1;
+          width: 50%;
+          height: 2px;
+          border-radius: 4px;
+          background-color: #c33f3d;
+        }
+        .bar-circle {
+          position: absolute;
+          left:50%;
+          z-index: 2;
+          margin-left: -7px;
+          width: 0;
+          height: 0;
+          padding:2px;
+          background-color: #e32b33;
+          border: 6px solid #fff;
+          border-radius: 100%;
+        }
+      }
+    }
+    .control-button{
+      display: flex;
+      justify-content: space-around;
+      align-items:center;
+      margin-top:40px;
+      .icon {
+        font-size:24px;
+        color: #ffffff;
+      }
+      .icon-play01 {
+        font-size:46px;
+        color: #ffffff;
       }
     }
   }
