@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="564ce60b-a026-4ae8-816b-bcc6507d5062" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/search/hot_search/search.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/search/hot_search/search.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pages/search/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/iconfont.css" afterPath="$PROJECT_DIR$/src/assets/css/iconfont.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/player/lyric/disc.js" afterPath="$PROJECT_DIR$/src/pages/player/lyric/disc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/player/lyric/disc.scss" afterPath="$PROJECT_DIR$/src/pages/player/lyric/disc.scss" />
     </list>
@@ -33,10 +35,12 @@
       <file leaf-file-name="disc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/player/lyric/disc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="54" />
+            <state relative-caret-position="390">
+              <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding>
-                <element signature="e#597#759#0" expanded="false" />
+                <element signature="e#482#825#0" expanded="false" />
+                <element signature="e#640#810#0" expanded="false" />
+                <element signature="e#1618#2415#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -55,14 +59,43 @@
       <file leaf-file-name="disc.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/player/lyric/disc.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+            <state relative-caret-position="478">
+              <caret line="59" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="1" />
               <folding>
-                <element signature="e#106#231#0" expanded="false" />
-                <element signature="e#242#407#0" expanded="false" />
-                <element signature="e#421#786#0" expanded="false" />
-                <element signature="e#936#1025#0" expanded="false" />
+                <element signature="e#112#916#0" expanded="false" />
+                <element signature="e#1321#2734#0" expanded="false" />
+                <element signature="e#1427#1516#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/search/hot_search/search.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/search/hot_search/search.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/search/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,8 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/home/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/hot_song/index.js" />
         <option value="$PROJECT_DIR$/src/components/nav/nav.js" />
         <option value="$PROJECT_DIR$/src/pages/hot_singer/index.js" />
         <option value="$PROJECT_DIR$/src/pages/hot_singer/singer_list/singer_list.js" />
@@ -147,6 +178,8 @@
         <option value="$PROJECT_DIR$/config/webpack.config.prod.js" />
         <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/src/assets/css/iconfont.css" />
+        <option value="$PROJECT_DIR$/src/pages/search/search.js" />
+        <option value="$PROJECT_DIR$/src/pages/search/index.js" />
         <option value="$PROJECT_DIR$/src/pages/player/lyric/disc.js" />
         <option value="$PROJECT_DIR$/src/pages/player/lyric/disc.scss" />
       </list>
@@ -224,7 +257,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,11 +275,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="singer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,17 +324,17 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\react\my_music\src\assets\css" />
-      <recent name="E:\react\my_music\src\assets\font" />
-      <recent name="E:\react\my_music\src\pages\home\music_list" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\react\my_music\src\pages\search\hot_search" />
       <recent name="E:\react\my_music\src\pages\player" />
       <recent name="E:\react\my_music\src\components" />
       <recent name="E:\react\my_music\src\pages\singer\singer_img" />
       <recent name="E:\react\my_music\src\assets\css" />
-      <recent name="E:\react\my_music\src\pages\home\header" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\react\my_music\src\assets\css" />
+      <recent name="E:\react\my_music\src\assets\font" />
+      <recent name="E:\react\my_music\src\pages\home\music_list" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -388,18 +443,18 @@
       <workItem from="1513735744039" duration="596000" />
       <workItem from="1513848892201" duration="3134000" />
       <workItem from="1513906606321" duration="49000" />
-      <workItem from="1513906767734" duration="3803000" />
+      <workItem from="1513906767734" duration="6637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98012000" />
+    <option name="totallyTimeSpent" value="100846000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="886" y="0" width="1021" height="1056" extended-state="1" />
+    <frame x="886" y="0" width="1021" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22279793" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43937823" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -438,27 +493,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/download (1)/font_506580_4cgecksjnrrdaemi/iconfont.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/nav/nav.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -778,6 +812,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/search/hot_search/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/search/hot_search/search.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/search/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/iconfont.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -788,23 +846,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/player/lyric/disc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="54" />
+        <state relative-caret-position="390">
+          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding>
-            <element signature="e#597#759#0" expanded="false" />
+            <element signature="e#482#825#0" expanded="false" />
+            <element signature="e#640#810#0" expanded="false" />
+            <element signature="e#1618#2415#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/player/lyric/disc.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+        <state relative-caret-position="478">
+          <caret line="59" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="1" />
           <folding>
-            <element signature="e#106#231#0" expanded="false" />
-            <element signature="e#242#407#0" expanded="false" />
-            <element signature="e#421#786#0" expanded="false" />
-            <element signature="e#936#1025#0" expanded="false" />
+            <element signature="e#112#916#0" expanded="false" />
+            <element signature="e#1321#2734#0" expanded="false" />
+            <element signature="e#1427#1516#0" expanded="false" />
           </folding>
         </state>
       </provider>

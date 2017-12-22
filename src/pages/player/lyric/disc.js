@@ -13,13 +13,46 @@ export default class Disc extends Component {
   render() {
     return (
       <div className="disc">
-        <img className="half" src={half_circle} alt=""/>
-        <img className="needle" src={needle_fix} alt=""/>
-        <div className="circle-cd">
-          <img src={defaultImg} alt=""/>
-          <img src={discImg} alt=""/>
-          <img src={disc_light} alt=""/>
+        <div className="cd-wrapper">
+          <img className="half" src={half_circle} alt=""/>
+          <img className="needle" src={needle_fix} alt=""/>
+          <div className="circle-cd">
+            <img src={defaultImg} alt=""/>
+            <img src={discImg} alt=""/>
+            <img src={disc_light} alt=""/>
+          </div>
         </div>
+        <div className="lyric-wrapper">
+          <ul>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li className="current">我是歌词</li>
+            <li >我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+            <li>我是歌词</li>
+          </ul>
+        </div>
+
         <div className="control-wrapper">
           <div className="control-bar">
             <span className="current-time">00:29</span>

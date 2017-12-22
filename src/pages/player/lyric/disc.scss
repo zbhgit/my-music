@@ -3,43 +3,68 @@
   overflow: hidden;
   border-top: 1px solid #323337;
   position: relative;
-  .half {
-    position: absolute;
-    left: 50%;
-    top: -1px;
-    transform: translateX(-50%);
-    width: 26px;
-    z-index: 5;
-  }
-  .needle {
-    position: absolute;
-    left: 50%;
-    transform-origin: 2px -6px;
-    margin-left: -6px;
-    top: 6px;
-    width: auto;
-    height: 150px;
-    z-index: 4;
-  }
-  .circle-cd {
-    position: relative;
-    margin: 0 auto;
-    margin-top: 80px;
-    width: 305px;
-    height: 305px;
-    border-radius: 50%;
-    overflow: hidden;
-    img {
+  .cd-wrapper {
+    height:73.5vh;
+    display: none;
+    .half {
       position: absolute;
-      width: 100%;
-      &:first-child {
-        z-index: 1;
+      left: 50%;
+      top: -1px;
+      transform: translateX(-50%);
+      width: 26px;
+      z-index: 5;
+    }
+    .needle {
+      position: absolute;
+      left: 50%;
+      transform-origin: 2px -6px;
+      margin-left: -6px;
+      top: 6px;
+      width: auto;
+      height: 150px;
+      z-index: 4;
+    }
+    .circle-cd {
+      position: relative;
+      top:80px;
+      margin: 0 auto;
+      width: 305px;
+      height: 305px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        position: absolute;
+        width: 100%;
+        &:first-child {
+          z-index: 1;
+        }
+        &:nth-child(2) {
+          z-index: 2;
+        }
+        &:last-child {
+          z-index: 3;
+        }
       }
-      &:nth-child(2) {
-        z-index: 2;
-      }
-      &:last-child {
-        z-index: 3;
+    }
+  }
+  .lyric-wrapper {
+    height:73.5vh;
+    color: #fff;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    ul {
+      height:100%;
+      overflow: hidden;
+      text-align: center;
+      padding:0 20px;
+      font-size:13px;
+      line-height:43px;
+      li {
+        color: #cdc9ca;
+        &.current {
+          color: #ffffff;
+          font-size:14px;
+        }
       }
     }
   }
@@ -48,7 +73,6 @@
     .control-bar {
       display: flex;
       align-items: center;
-      margin-top: 95px;
       .current-time {
         margin: 0 15px 0 12px;
         font-size: 12px;
