@@ -16,7 +16,7 @@ export default class SingerList extends Component {
     let {singers} = this.state;
     let elSingerList = singers.map((singer) => {
       return (
-        <li className="singer_item" key={singer.id}>
+        <li  key={singer.id}>
           <SingerItem singer={singer} icon={true} />
         </li>
       )

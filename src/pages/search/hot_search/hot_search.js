@@ -15,7 +15,7 @@ export default class HotSearch extends Component {
     };
     return (
       <div>
-        <div className="hot_search" style={{display: "none"}}>
+        <div className="hot_search">
           <Title title={"热搜"}/>
           <ul className="hot_item-wrapper">
             <li className="hot_item">
@@ -50,7 +50,7 @@ export default class HotSearch extends Component {
             </li>
           </ul>
         </div>
-        <div className="search_result">
+        <div className="search_result"  style={{display: "none"}}>
           <Title title={"最佳匹配"}/>
           <SingerItem singer={singer}/>
           <ul>

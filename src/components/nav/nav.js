@@ -2,19 +2,23 @@
  * Created by Z on 2017/12/12.
  */
 import React,{Component} from 'react';
+import {NavLink} from 'react-router-dom'
 import './nav.scss'
 class Nav extends Component {
   render() {
     return (
       <ul className="home_nav">
         <li >
-          <span className="text active">推荐音乐</span>
+          <NavLink exact to="/" className="text" activeClassName='active'>推荐音乐</NavLink>
         </li>
         <li>
-          <span className="text">热门歌手</span>
+          <NavLink to="/singer" activeClassName='active' className="text">热门歌手</NavLink>
         </li>
         <li>
-          <span className="text">排行榜</span>
+          <NavLink to="/rank" activeClassName='active' className="text">排行榜</NavLink>
+        </li>
+        <li>
+          <NavLink to="/search" activeClassName='active' className="text">搜索</NavLink>
         </li>
       </ul>
     )
