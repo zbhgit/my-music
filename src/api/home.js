@@ -3,14 +3,32 @@
  */
 import axios from 'axios'
 
-const url = 'http://www.zhangbinhe.com:3000';
+const baseUrl = 'http://www.zhangbinhe.com:3000';
 // 获取banner轮播数据
 
 export function getBannerData() {
-  return axios.get(`${url}/banner`)
+  return axios.get(`${baseUrl}/banner`)
     .then((response) => {
     return Promise.resolve(response.data)
     })
 }
 
+// 获取推荐歌单
+export function getRecommendPlaylist() {
+  const url = `${baseUrl}/top/playlist/highquality?limit=6`
+  return axios.get(url)
+    .then(response=>{
+      return Promise.resolve(response.data)
+    })
+}
 
+
+// 获取最新推荐音乐
+
+export function getNewSongs() {
+  const url = `${baseUrl}/personalized/newsong`
+  return axios.get(url)
+    .then(response=>{
+      return Promise.resolve(response.data)
+    })
+}

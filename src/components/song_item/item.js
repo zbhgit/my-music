@@ -8,13 +8,13 @@ import PropTypes from 'prop-types'
 
 export default class Item extends Component {
   render() {
-    const {name,artist,album,sq} = this.props;
+    const {name,artist,album,sq,alias} = this.props;
     const icon = sq ?  "icon-sq" : ""  ;
     const className = `icon iconfont ${icon}`;
     const artists = artist ? `${artist} - ` : '';
     return (
       <div className="component_item">
-        <h3 className="component_name">{name}</h3>
+        <h3 className="component_name">{name} <span>{alias && `(${alias})`}</span></h3>
         <div className="component_artist">
           <span className={className}> </span>
           <span >{artists} {album}</span>
