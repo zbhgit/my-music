@@ -32,7 +32,6 @@ export default class SingerList extends Component {
     fetch('http://www.zhangbinhe.com:3000/top/artists?offset=0&limit=30').then(r => r.json()).then(r => {
       if (r.code === 200) {
         let {artists} = r;
-        console.log(artists);
         this.setState({
           singers: artists
         })
