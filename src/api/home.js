@@ -15,7 +15,7 @@ export function getBannerData() {
 
 // 获取推荐歌单
 export function getRecommendPlaylist() {
-  const url = `${baseUrl}/top/playlist/highquality?limit=6`
+  const url = `${baseUrl}/top/playlist/highquality?limit=6`;
   return axios.get(url)
     .then(response=>{
       return Promise.resolve(response.data)
@@ -26,7 +26,7 @@ export function getRecommendPlaylist() {
 // 获取最新推荐音乐
 
 export function getNewSongs() {
-  const url = `${baseUrl}/personalized/newsong`
+  const url = `${baseUrl}/personalized/newsong`;
   return axios.get(url)
     .then(response=>{
       return Promise.resolve(response.data)

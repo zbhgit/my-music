@@ -33,7 +33,6 @@ class MusicList extends Component {
     getNewSongs()
       .then(response => {
         if (response.code === 200) {
-          console.log(response);
           this.setState({
             newSongs: response.result
           })

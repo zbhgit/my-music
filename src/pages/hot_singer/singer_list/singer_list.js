@@ -4,41 +4,71 @@
 import './singer_list.scss'
 import React, {Component} from 'react'
 import SingerItem from 'components/singer_item/singer_item'
+import LoadMore from 'components/load_more/load_more'
+import {getSingerListData} from '../../../api/singer'
 export default class SingerList extends Component {
   constructor(props) {
-    super(...props)
+    super(...props);
+    this.getSingerList = this.getSingerList.bind(this);
     this.state = {
-      singers: []
+      singers: [],
+      hasMore: false,
+      isLoadingMore: false
     }
   }
 
+  getSingerList() {
+    this.setState({
+      isLoadingMore: true
+    });
+    const offset = this.state.singers.length;
+    const limit = 20;
+    getSingerListData(offset, limit)
+      .then((response) => {
+        if (response.code === 200) {
+          const {more, artists} = response;
+          console.log(response);
+          this.setState({
+            singers: this.state.singers.concat(artists),
+            hasMore: more,
+            isLoadingMore: false
+          })
+        }
+      })
+  }
+
+  componentDidMount() {
+    this.getSingerList()
+  }
+
   render() {
-    let {singers} = this.state;
+    const style = {
+      fontSize: '15px',
+      height: '30px',
+      textAlign: 'center',
+      lineHeight: '30px',
+      paddingBottom: '10px',
+      color: '#969696'
+    };
+    let {singers, isLoadingMore, hasMore} = this.state;
     let elSingerList = singers.map((singer) => {
       return (
-        <li  key={singer.id}>
-          <SingerItem singer={singer} icon={true} />
+        <li key={singer.id}>
+          <SingerItem singer={singer} icon={true}/>
         </li>
       )
     });
     return (
-      <ul className="singer_list">
-        {elSingerList}
-      </ul>
+      <div>
+        <ul className="singer_list">
+          {elSingerList}
+        </ul>
+        {hasMore ? <LoadMore isLoadingMore={isLoadingMore} loadMoreFn={    this.getSingerList }/> :
+          <p style={style}>没有更多了</p>}
+
+      </div>
     )
   }
 
-  componentDidMount() {
-    fetch('http://www.zhangbinhe.com:3000/top/artists?offset=0&limit=30').then(r => r.json()).then(r => {
-      if (r.code === 200) {
-        let {artists} = r;
-        this.setState({
-          singers: artists
-        })
-      }
 
-    }).catch(e => {
-      console.log(e)
-    })
-  }
 }
