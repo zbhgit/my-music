@@ -13,7 +13,7 @@ export default class SingerItem extends Component {
       display: icon? '' : "none",
     };
    return (
-     <NavLink to={'/singer/:singerId'} className="singer_item">
+     <NavLink to={`/singer/${singer.id}`} className="singer_item">
        <img className="singer_img" src={singer.img1v1Url} alt="歌手相片"/>
        <p className="singer_name">歌手: <span>{singer.name}</span> {singer.alias[0] ? `(${singer.alias[0]})` : ''}</p>
        <span style={style} className="icon iconfont icon-right"></span>

@@ -4,7 +4,7 @@
 import axios from 'axios'
 const baseUrl = 'http://www.zhangbinhe.com:3000';
 
-//
+// 获取热门歌手
 export function getSingerListData(offset,limit) {
   const url = `${baseUrl}/top/artists`;
   const data = {
@@ -17,3 +17,17 @@ export function getSingerListData(offset,limit) {
     })
 
 }
+
+// 获取歌手单曲
+
+export function getSingerSongs(singerId) {
+  const url = `${baseUrl}/artists`;
+  const data = {
+    id: singerId
+  };
+  return axios.get(url, {params: data})
+    .then((response)=>{
+      return Promise.resolve(response.data)
+    })
+}
+

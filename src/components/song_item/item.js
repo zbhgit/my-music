@@ -14,13 +14,17 @@ export default class Item extends Component {
     const artists = artist ? `${artist} - ` : '';
     return (
       <div className="component_item">
-        <h3 className="component_name">{name} <span>{alias && `(${alias})`}</span></h3>
-        <div className="component_artist">
-          <span className={className}> </span>
-          <span >{artists} {album}</span>
+        <div className="item_desc">
+          <div className="name-wrapper">
+            <span className="name">{name}&nbsp;&nbsp;</span>
+            <span className="alias">{alias && `(${alias})`}</span>
+          </div>
+          <div className="artist-wrapper">
+            <span className={className}> </span>
+            <span className="artists">{artists} {album}</span>
+          </div>
         </div>
-        <span className="icon iconfont icon-play01">
-        </span>
+        <span className="icon iconfont icon-play01"></span>
       </div>
     )
   }
