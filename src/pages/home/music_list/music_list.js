@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Item from 'components/song_item/item';
 import Title from 'components/title/title';
 import {getRecommendPlaylist, getNewSongs} from '../../../api/home'
+import {formatCount,sortArtists,setEllipsis} from 'util/util'
 import {NavLink} from 'react-router-dom'
 import './music_list.scss'
 class MusicList extends Component {
@@ -16,7 +17,6 @@ class MusicList extends Component {
   componentDidMount() {
     this._getRecommendPlaylist();
     this._getNewSongs();
-    this.setEllipsis("100位欧美90后歌手：他们把青春给了音乐")
   }
   // 获取推荐歌单
   _getRecommendPlaylist() {
@@ -41,33 +41,6 @@ class MusicList extends Component {
       })
   }
 
-  // 计算播放次数 单位万
-  formatCount(num) {
-    let result;
-    if (num > 10000) {
-      result = `${Math.floor(num / 10000)}万`;
-    } else {
-      result = num;
-    }
-    return result;
-  }
-
-  // 排列歌曲演唱者
-  sortArtists(artists) {
-    let art = '';
-    let arr = [];
-    const len = artists.length;
-    for (let i = 0; i < len; i++) {
-      arr.push(artists[i].name)
-    }
-    art = arr.join(' / ');
-    return art;
-  }
-  // 添加省略号
-  setEllipsis(str) {
-    let newStr = str.slice(0,14).concat('...');
-    return newStr;
-  }
   render() {
     const {playLists, newSongs} = this.state;
     const playListLinks = playLists && playLists.map((playList) => {
@@ -76,9 +49,9 @@ class MusicList extends Component {
             <img src={playList.coverImgUrl} alt="歌单封面"/>
             <div className="listen_count">
               <span className="icon iconfont icon-listen"></span>
-              <span className="count">{this.formatCount(playList.playCount)}</span>
+              <span className="count">{formatCount(playList.playCount)}</span>
             </div>
-            <p className="description">{this.setEllipsis(playList.name)}</p>
+            <p className="description">{setEllipsis(playList.name)}</p>
           </NavLink>
         )
       });
@@ -99,7 +72,7 @@ class MusicList extends Component {
               return (
                 <li key={song.id}>
                   <Item name={`${song.name}`}
-                        artist={this.sortArtists(song.song.artists)}
+                        artist={sortArtists(song.song.artists)}
                         album={song.song.album.name}
                         sq={song.song.privilege.maxbr === 999000}
                         alias={song.song.alias[0]}
