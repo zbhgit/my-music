@@ -19,13 +19,14 @@ class Carousel extends Component {
     getBannerData()
       .then((res) => {
         if (res.code === 200) {
-          this.setState({
+          this.setState(Object.assign(this.state,{
             banners: res.banners
-          })
+          }))
         }
-      })
+      });
   }
-
+  componentWillUpdate() {
+  }
   setPointActive(index) {
     this.setState({
       index: index
@@ -34,14 +35,14 @@ class Carousel extends Component {
 
   render() {
     const {banners, index} = this.state;
-    const carousel = banners && banners.map((banner) => {
+    const carousel = banners ? banners.map((banner) => {
         return (
           <div key={banner.encodeId} className="imgWrapper">
             <img src={banner.pic} alt="banner"/>
             <span style={{backgroundColor: `${banner.titleColor}`}} className="tag">{banner.typeTitle}</span>
           </div>
         )
-      });
+      }) : <p>正在加载数据</p>;
     const carouselWrapper = banners ? <ReactSwipe className="carousel" swipeOptions={{
       continuous: true,
       callback: this.setPointActive,
@@ -49,13 +50,13 @@ class Carousel extends Component {
     }}>
       {carousel}
     </ReactSwipe> : '';
-    const point = banners && banners.map((banner, num) => {
+    const point = banners ? banners.map((banner, num) => {
         return (
           <li key={num} className={num === index ? 'active' : ''}>
 
           </li>
         )
-      });
+      }):'';
     return (
       <div className="carousel-wrapper">
 

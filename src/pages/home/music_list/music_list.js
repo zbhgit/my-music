@@ -9,8 +9,8 @@ class MusicList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playLists: null,
-      newSongs: null
+      playLists: [],
+      newSongs: []
     }
   }
 
@@ -43,7 +43,7 @@ class MusicList extends Component {
 
   render() {
     const {playLists, newSongs} = this.state;
-    const playListLinks = playLists && playLists.map((playList) => {
+    const playListLinks = playLists ? playLists.map((playList) => {
         return (
           <NavLink key={playList.id} to={`song/${playList.id}`} href="button" className="item">
             <img src={playList.coverImgUrl} alt="歌单封面"/>
@@ -54,7 +54,7 @@ class MusicList extends Component {
             <p className="description">{setEllipsis(playList.name)}</p>
           </NavLink>
         )
-      });
+      }) : <p>正在加载数据</p>;
     return (
       <div className="music_list">
         {/*精品歌单*/}

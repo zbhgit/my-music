@@ -2,7 +2,7 @@
  * Created by Z on 2017/12/24.
  */
 import axios from 'axios'
-const baseUrl = 'http://www.zhangbinhe.com:3000';
+import {baseUrl} from './constant'
 
 // 获取热门歌手
 export function getSingerListData(offset,limit) {

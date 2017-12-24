@@ -3,7 +3,7 @@
  */
 import axios from 'axios'
 
-const baseUrl = 'http://www.zhangbinhe.com:3000';
+import {baseUrl} from './constant'
 
 // 获取歌单详情
 export function getSongListDetail(songListId) {

@@ -2,11 +2,18 @@
  * Created by Z on 2017/12/14.
  */
 import './rank_list.scss'
+import {getRankData} from '../../../api/rank'
 
 import React, {Component} from 'react'
 import Title from 'components/title/title'
 import RankImg from 'components/rank_img/rank_img'
 export default class Ranklist extends Component {
+  componentDidMount() {
+    // getRankData()
+    //   .then((response) => {
+    //   console.log(response);
+    //   })
+  }
   render() {
     return (
       <div className="rank_list">
