@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="564ce60b-a026-4ae8-816b-bcc6507d5062" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/singer.js" afterPath="$PROJECT_DIR$/src/api/singer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/singer_item/singer_item.js" afterPath="$PROJECT_DIR$/src/components/singer_item/singer_item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/song_item/item.js" afterPath="$PROJECT_DIR$/src/components/song_item/item.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/song_item/item.scss" afterPath="$PROJECT_DIR$/src/components/song_item/item.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/singer/index.js" afterPath="$PROJECT_DIR$/src/pages/singer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/singer/singer_img/singer_img.js" afterPath="$PROJECT_DIR$/src/pages/singer/singer_img/singer_img.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/singer/singer_img/singer_img.scss" afterPath="$PROJECT_DIR$/src/pages/singer/singer_img/singer_img.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/singer/singer_song/singer_song.js" afterPath="$PROJECT_DIR$/src/pages/singer/singer_song/singer_song.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/singer/singer_song/singer_song.scss" afterPath="$PROJECT_DIR$/src/pages/singer/singer_song/singer_song.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" afterPath="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -115,22 +106,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/song_item/item.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+            <state relative-caret-position="270">
+              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load_more.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/load_more/load_more.scss">
+      <file leaf-file-name="music_list.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" column="17" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="6" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="279">
+              <caret line="66" column="47" lean-forward="false" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="n#!!block;n#formatCount#0;n#MusicList#0" expanded="false" />
+                <element signature="n#!!block;n#sortArtists#0;n#MusicList#0" expanded="false" />
+                <marker date="1514090414681" expanded="true" signature="1865:2034" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/api/constant.js" />
         <option value="$PROJECT_DIR$/src/pages/home/carousel/carousel.scss" />
         <option value="$PROJECT_DIR$/src/pages/home/carousel/carousel.js" />
-        <option value="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" />
         <option value="$PROJECT_DIR$/src/api/home.js" />
         <option value="$PROJECT_DIR$/src/components/load_more/load_more.js" />
         <option value="$PROJECT_DIR$/src/components/load_more/load_more.scss" />
@@ -217,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/pages/singer/singer_song/singer_song.scss" />
         <option value="$PROJECT_DIR$/src/components/song_item/item.scss" />
         <option value="$PROJECT_DIR$/src/components/song_item/item.js" />
+        <option value="$PROJECT_DIR$/src/pages/home/music_list/music_list.js" />
       </list>
     </option>
   </component>
@@ -357,7 +353,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="my_music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="music_list" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,13 +531,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144782000" />
+    <option name="totallyTimeSpent" value="145751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="623" y="0" width="1298" height="1044" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21527272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21497585" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -891,25 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <marker date="1514047484310" expanded="true" signature="1702:1871" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2019:2476" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2074:2220" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2108:2214" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2160:2205" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2274:2476" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2336:2476" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2445:2476" ph="..." />
-            <marker date="1514047484310" expanded="true" signature="2877:2963" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/detail_header/header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1038,9 +1045,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/song_item/item.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+        <state relative-caret-position="270">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/home/music_list/music_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="66" column="47" lean-forward="false" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="n#!!block;n#formatCount#0;n#MusicList#0" expanded="false" />
+            <element signature="n#!!block;n#sortArtists#0;n#MusicList#0" expanded="false" />
+            <marker date="1514090414681" expanded="true" signature="1865:2034" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

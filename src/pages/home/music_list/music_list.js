@@ -15,7 +15,8 @@ class MusicList extends Component {
 
   componentDidMount() {
     this._getRecommendPlaylist();
-    this._getNewSongs()
+    this._getNewSongs();
+    this.setEllipsis("100位欧美90后歌手：他们把青春给了音乐")
   }
   // 获取推荐歌单
   _getRecommendPlaylist() {
@@ -62,7 +63,11 @@ class MusicList extends Component {
     art = arr.join(' / ');
     return art;
   }
-
+  setEllipsis(str) {
+    let newStr = str.slice(0,14).concat('...');
+    console.log(newStr);
+    return newStr;
+  }
   render() {
     const {playLists, newSongs} = this.state;
     const playListLinks = playLists && playLists.map((playList) => {
@@ -73,7 +78,7 @@ class MusicList extends Component {
               <span className="icon iconfont icon-listen"></span>
               <span className="count">{this.formatCount(playList.playCount)}</span>
             </div>
-            <p className="description">{playList.name}</p>
+            <p className="description">{this.setEllipsis(playList.name)}</p>
           </NavLink>
         )
       });
