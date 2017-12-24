@@ -23,9 +23,9 @@ class MusicList extends Component {
     getRecommendPlaylist()
       .then(response => {
         if (response.code === 200) {
-          this.setState({
+          this.setState(Object.assign(this.state,{
             playLists: response.playlists
-          })
+          }))
         }
       })
   }
@@ -34,9 +34,9 @@ class MusicList extends Component {
     getNewSongs()
       .then(response => {
         if (response.code === 200) {
-          this.setState({
+          this.setState(Object.assign(this.state,{
             newSongs: response.result
-          })
+          }))
         }
       })
   }
@@ -63,9 +63,9 @@ class MusicList extends Component {
     art = arr.join(' / ');
     return art;
   }
+  // 添加省略号
   setEllipsis(str) {
     let newStr = str.slice(0,14).concat('...');
-    console.log(newStr);
     return newStr;
   }
   render() {
