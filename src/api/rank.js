@@ -4,15 +4,12 @@
 import {baseUrl} from './constant'
 import axios from 'axios'
 
-export function getRankData() {
+export function getRankRanks() {
   let promiseArr = [];
   for (let i = 0; i < 22; i++) {
     promiseArr[i] = _getRankByIndex(i)
   }
-  Promise.all(promiseArr)
-    .then(response => {
-      return Promise.resolve(response);
-    });
+  return Promise.all(promiseArr)
 }
 
 function _getRankByIndex(index) {
@@ -22,6 +19,8 @@ function _getRankByIndex(index) {
   };
   return axios.get(url, {params: data})
     .then((response) => {
-      return response.data
+      if (response.data.code === 200) {
+        return response.data.playlist
+      }
     })
 }

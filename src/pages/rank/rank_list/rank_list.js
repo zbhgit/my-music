@@ -2,131 +2,89 @@
  * Created by Z on 2017/12/14.
  */
 import './rank_list.scss'
-import {getRankData} from '../../../api/rank'
-
+import {getRankRanks} from '../../../api/rank'
 import React, {Component} from 'react'
 import Title from 'components/title/title'
 import RankImg from 'components/rank_img/rank_img'
+import {NavLink} from 'react-router-dom'
 export default class Ranklist extends Component {
-  componentDidMount() {
-    // getRankData()
-    //   .then((response) => {
-    //   console.log(response);
-    //   })
+  constructor(props) {
+    super(props);
+    this.getUpdateTime = this.getUpdateTime.bind(this);
+    this.getRandomNum = this.getRandomNum.bind(this);
+    this.state = {
+      officialRanks: [],
+      globalRanks: []
+    }
   }
+
+  getUpdateTime(str) {
+    const len = str.length;
+    const newStr = str.substring(len - 5, len - 1);
+    return newStr;
+  }
+
+  getRandomNum() {
+    return Math.floor(Math.random() * 8)
+  }
+
+  componentDidMount() {
+    getRankRanks()
+      .then((response) => {
+        const officialRanks = response.slice(0, 4);
+        const globalRanks = response.slice(4);
+        this.setState(Object.assign(this.state, {
+          officialRanks,
+          globalRanks
+        }))
+      });
+  }
+
   render() {
+    const {officialRanks, globalRanks} = this.state;
+    const day = ['一', '二', '三', '四', '五', '六', '日'];
     return (
       <div className="rank_list">
         <Title title={"云音乐官方版"} icon={false}/>
         <ul className="official_rank">
-          <li className="official_item">
-            <RankImg time={"每天更新"}
-                     url={"http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=247y247"}/>
-            <ol className="official_item-list">
-              <li>1. 广东十年爱情故事 - <span>广东雨神</span></li>
-              <li>2. 说散就散 - 袁娅维</li>
-              <li>3. 空山 - 胡清集</li>
-            </ol>
+          {officialRanks ? officialRanks.map((officialRank) => {
+            return (
+              <li key={officialRank.id} className="official_item">
+                <NavLink to={`song/${officialRank.id}`}>
+                  <RankImg time={this.getUpdateTime(officialRank.description)}
+                           url={officialRank.coverImgUrl}/>
+                </NavLink>
+                <NavLink to={`song/${officialRank.id}`}>
+                  <ol className="official_item-list">
+                    {
+                      officialRank.tracks.slice(0, 3).map((track, index) => {
+                        return (
+                          <li key={index}>{index += 1}. {track.name} - <span>{track.ar[0].name}</span></li>
+                        )
+                      })
+                    }
+                  </ol>
+                </NavLink>
+              </li>
 
-          </li>
-          <li className="official_item">
-            <RankImg time={"每天更新"}
-                     url={"http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=247y247"}/>
-            <ol className="official_item-list">
-              <li>1. 广东十年爱情故事 - <span>广东雨神</span></li>
-              <li>2. 说散就散 - 袁娅维</li>
-              <li>3. 空山 - 胡清集</li>
-            </ol>
-
-          </li>
-          <li className="official_item">
-            <RankImg time={"每天更新"}
-                     url={"http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=247y247"}/>
-            <ol className="official_item-list">
-              <li>1. 广东十年爱情故事 - <span>广东雨神</span></li>
-              <li>2. 说散就散 - 袁娅维</li>
-              <li>3. 空山 - 胡清集</li>
-            </ol>
-
-          </li>
-          <li className="official_item">
-            <RankImg time={"每天更新"}
-                     url={"http://p1.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg?param=247y247"}/>
-            <ol className="official_item-list">
-              <li>1. 广东十年爱情故事 - <span>广东雨神</span></li>
-              <li>2. 说散就散 - 袁娅维</li>
-              <li>3. 空山 - 胡清集</li>
-            </ol>
-
-          </li>
+            )
+          }) : <li>正在加载......</li>}
         </ul>
         <Title title={"全球榜"} icon={false}/>
         <ul className="global_rank">
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
-          <li className="global_rank-item">
-            <RankImg time={'每周五更新'} url={"http://p1.music.126.net/EBRqPmY8k8qyVHyF8AyjdQ==/18641120139148117.jpg"}
-                     width={"32.8vw"}/>
-            <p className="rank_name">云音乐电音榜</p>
-          </li>
+          {globalRanks ? globalRanks.map((globalRank) => {
+            return (
+              <li key={globalRank.id} className="global_rank-item">
+                <NavLink to={`song/${globalRank.id}`}>
+
+                <RankImg time={`每周${day[this.getRandomNum()]}更新`} url={globalRank.coverImgUrl}
+                         width={"32.8vw"}/>
+                <p className="rank_name">{globalRank.name}</p>
+                </NavLink>
+              </li>
+
+            )
+          }) : <li>正在加载......</li> }
         </ul>
       </div>
     )

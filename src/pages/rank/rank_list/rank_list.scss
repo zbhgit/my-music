@@ -3,15 +3,23 @@
     display: flex;
     align-items: center;
     .official_item-list {
-      padding:12px 10px;
-      flex:1;
-      line-height:33px;
-      font-size:14px;
+      padding: 12px 10px;
+      flex: 1;
+      line-height: 33px;
+      font-size: 14px;
       color: #646566;
       border-bottom: 1px solid #e2e3e4;
+      li {
+        width: 60vw;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
     }
   }
 }
+
 .global_rank {
   display: flex;
   justify-content: space-between;
@@ -19,9 +27,9 @@
   .global_rank-item {
     padding-bottom: 20px;
     width: 32.8vw;
-    .rank_name{
+    .rank_name {
       padding: 0 8px;
-      font-size:12px;
+      font-size: 12px;
       line-height: 14px;
     }
   }
