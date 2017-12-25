@@ -83,6 +83,7 @@ class MusicList extends Component {
                         album={song.song.album.name}
                         sq={song.song.privilege.maxbr === 999000}
                         alias={song.song.alias[0]}
+                        id={song.id}
                   />
                 </li>
               )
