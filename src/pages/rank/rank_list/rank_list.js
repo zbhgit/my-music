@@ -12,6 +12,7 @@ export default class Ranklist extends Component {
     super(props);
     this.getUpdateTime = this.getUpdateTime.bind(this);
     this.getRandomNum = this.getRandomNum.bind(this);
+    this._getRankRanks = this._getRankRanks.bind(this);
     this.state = {
       officialRanks: [],
       globalRanks: []
@@ -25,10 +26,13 @@ export default class Ranklist extends Component {
   }
 
   getRandomNum() {
-    return Math.floor(Math.random() * 8)
+    return Math.floor(Math.random() * 7)
   }
 
   componentDidMount() {
+   this._getRankRanks()
+  }
+  _getRankRanks() {
     getRankRanks()
       .then((response) => {
         const officialRanks = response.slice(0, 4);
@@ -39,7 +43,6 @@ export default class Ranklist extends Component {
         }))
       });
   }
-
   render() {
     const {officialRanks, globalRanks} = this.state;
     const day = ['一', '二', '三', '四', '五', '六', '日'];

@@ -34,5 +34,5 @@ Item.propTypes = {
   name: PropTypes.string,
   artist:PropTypes.string,
   album: PropTypes.string,
-  sq: PropTypes.bool
+  sq: PropTypes.bool,
 };

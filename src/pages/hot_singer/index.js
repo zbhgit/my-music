@@ -7,9 +7,10 @@ import Nav from 'components/nav/nav'
 import SingerList from './singer_list/singer_list'
 export default class HotSinger extends Component{
   render() {
+    const {history} = this.props;
     return (
       <div className="hotSinger">
-        <Header/>
+        <Header history={history}/>
         <Nav/>
         <SingerList/>
       </div>

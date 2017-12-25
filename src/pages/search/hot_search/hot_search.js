@@ -6,95 +6,115 @@ import './hot_search.scss'
 import Title from 'components/title/title'
 import SingerItem from 'components/singer_item/singer_item'
 import SongItem from 'components/song_item/item'
+import {getSearchSingerData, getSearchSongData} from 'api/search'
+import {sortArtists,} from 'util/util'
+
+import {hotData} from './hot'
+
+
 export default class HotSearch extends Component {
+  constructor(props) {
+    super(props);
+    this.onHandleClick = this.onHandleClick.bind(this);
+    this.getDatatimer = 0;
+    this.state = {
+      keywords: this.props.keywords,
+      artist: {},
+      songs: [],
+      hasData: false
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {keywords} = this.state;
+    if (keywords !== nextProps.keywords) {
+      this.setState({
+        keywords: nextProps.keywords
+      });
+      clearTimeout(this.getDataTimer);
+      this.getDataTimer = setTimeout(() => {
+        if (nextProps.keywords.length > 1) {
+          this._getSearchSingerData(nextProps.keywords);
+          this._getSearchSongData(nextProps.keywords)
+        }
+      }, 1000);
+    }
+  }
+
+  // 获取歌手数据
+  _getSearchSingerData(keyword) {
+    getSearchSingerData(keyword)
+      .then((response) => {
+        if (response.code === 200) {
+          this.setState(Object.assign(this.state, {
+            artist: response.result.artists[0] || {}
+          }))
+        }
+      })
+  }
+
+  // 获取歌曲数据
+  _getSearchSongData(keyword) {
+    getSearchSongData(keyword)
+      .then((response) => {
+        if (response.code === 200) {
+          this.setState(Object.assign(this.state, {
+            songs: response.result.songs,
+            hasData: true
+          }))
+        }
+      })
+  }
+
+  onHandleClick(event) {
+    const value = event.target.innerHTML;
+    this.props.onHandleHotClick(value)
+  }
   render() {
+    const {artist, songs, hasData} = this.state;
     const singer = {
-      img1v1Url: "http://p3.music.126.net/Qc5fsvjghmXXrLavDdQWgA==/19018252625793869.jpg",
-      name: "周杰伦",
-      alias: ["Jay Chou"],
+      id: artist.id,
+      img1v1Url: artist.img1v1Url,
+      name: artist.name,
+      alias: artist.alias || [''],
     };
-    return (
-      <div>
-        <div className="hot_search">
-          <Title title={"热搜"}/>
-          <ul className="hot_item-wrapper">
-            <li className="hot_item">
-              Taylor Swift
-            </li>
-            <li className="hot_item">
-              石头计划
-            </li>
-            <li className="hot_item">
-              红昭愿
-            </li>
-            <li className="hot_item">
-              广东爱情故事
-            </li>
-            <li className="hot_item">
-              说散就散
-            </li>
-            <li className="hot_item">
-              缝纫机乐队
-            </li>
-            <li className="hot_item">
-              假如
-            </li>
-            <li className="hot_item">
-              孙燕姿
-            </li>
-            <li className="hot_item">
-              陈奕迅
-            </li>
-            <li className="hot_item">
-              张杰
-            </li>
-          </ul>
-        </div>
-        <div className="search_result"  style={{display: "none"}}>
+    const {hots} = hotData.result;
+    if (!hasData) {
+      return <div className="hot_search">
+        <Title title={"热搜"}/>
+        <ul className="hot_item-wrapper">
+          {hots.map((hot, index) => {
+            return (
+              <li key={index} onClick={this.onHandleClick} className="hot_item">
+                {hot.first}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    } else {
+      return (
+
+        <div className="search_result">
           <Title title={"最佳匹配"}/>
           <SingerItem singer={singer}/>
           <ul>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-            <li>
-              <SongItem name={"Molly Town"} album={"Water for Your Soul"} artist={"Joss Stone"}/>
-            </li>
-
+            {songs && songs.map((song) => {
+              return (
+                <li key={song.id}>
+                  <SongItem name={song.name}
+                            artist={sortArtists(song.artists)}
+                            album={song.album.name}
+                            alias={song.alias[0]}
+                            id={song.id}
+                  />
+                </li>
+              )
+            })}
           </ul>
         </div>
-      </div>
+      )
+    }
 
-    )
   }
 }

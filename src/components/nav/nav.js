@@ -17,9 +17,6 @@ class Nav extends Component {
         <li>
           <NavLink to="/rank" activeClassName='active' className="text">排行榜</NavLink>
         </li>
-        <li>
-          <NavLink to="/search" activeClassName='active' className="text">搜索</NavLink>
-        </li>
       </ul>
     )
   }

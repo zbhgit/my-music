@@ -27,7 +27,6 @@ export default class SingerList extends Component {
       .then((response) => {
         if (response.code === 200) {
           const {more, artists} = response;
-          console.log(response);
           this.setState({
             singers: this.state.singers.concat(artists),
             hasMore: more,

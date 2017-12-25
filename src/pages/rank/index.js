@@ -7,9 +7,10 @@ import React, {Component} from 'react'
 import RankList from './rank_list/rank_list'
 export default class Rank extends Component {
   render() {
+    const {history} = this.props;
     return (
       <div className="rank">
-        <Header/>
+        <Header history={history}/>
         <Nav/>
         <RankList/>
       </div>
