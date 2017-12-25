@@ -7,6 +7,8 @@ import React, {Component} from 'react'
 import Title from 'components/title/title'
 import RankImg from 'components/rank_img/rank_img'
 import {NavLink} from 'react-router-dom'
+import Loading from 'components/loading/loading'
+
 export default class Ranklist extends Component {
   constructor(props) {
     super(props);
@@ -46,6 +48,11 @@ export default class Ranklist extends Component {
   render() {
     const {officialRanks, globalRanks} = this.state;
     const day = ['一', '二', '三', '四', '五', '六', '日'];
+    if(globalRanks.length === 0) {
+      return (
+        <Loading/>
+      )
+    }
     return (
       <div className="rank_list">
         <Title title={"云音乐官方版"} icon={false}/>

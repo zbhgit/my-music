@@ -4,6 +4,8 @@ import Title from 'components/title/title';
 import {getRecommendPlaylist, getNewSongs} from '../../../api/home'
 import {formatCount,sortArtists,setEllipsis} from 'util/util'
 import {NavLink} from 'react-router-dom'
+import Loading from 'components/loading/loading'
+
 import './music_list.scss'
 class MusicList extends Component {
   constructor(props) {
@@ -43,7 +45,7 @@ class MusicList extends Component {
 
   render() {
     const {playLists, newSongs} = this.state;
-    const playListLinks = playLists ? playLists.map((playList) => {
+    const playListLinks = playLists && playLists.map((playList) => {
         return (
           <NavLink key={playList.id} to={`song/${playList.id}`} href="button" className="item">
             <img src={playList.coverImgUrl} alt="歌单封面"/>
@@ -54,7 +56,12 @@ class MusicList extends Component {
             <p className="description">{setEllipsis(playList.name)}</p>
           </NavLink>
         )
-      }) : <p>正在加载数据</p>;
+      });
+    if(newSongs.length === 0) {
+      return (
+        <Loading/>
+      )
+    }
     return (
       <div className="music_list">
         {/*精品歌单*/}

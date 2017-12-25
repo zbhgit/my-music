@@ -6,6 +6,8 @@ import React, {Component} from 'react'
 import SingerItem from 'components/singer_item/singer_item'
 import LoadMore from 'components/load_more/load_more'
 import {getSingerListData} from '../../../api/singer'
+import Loading from 'components/loading/loading'
+
 export default class SingerList extends Component {
   constructor(props) {
     super(...props);
@@ -57,6 +59,11 @@ export default class SingerList extends Component {
         </li>
       )
     });
+    if(singers.length === 0) {
+      return (
+        <Loading/>
+      )
+    }
     return (
       <div>
         <ul className="singer_list">

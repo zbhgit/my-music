@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import ReactSwipe from 'react-swipe';
 import {getBannerData} from '../../../api/home'
 import './carousel.scss'
+import Loading from 'components/loading/loading'
 class Carousel extends Component {
   constructor(props) {
     super(props);
@@ -24,8 +25,6 @@ class Carousel extends Component {
           }))
         }
       });
-  }
-  componentWillUpdate() {
   }
   setPointActive(index) {
     this.setState({
@@ -57,6 +56,11 @@ class Carousel extends Component {
           </li>
         )
       }):'';
+    if(!banners) {
+      return (
+        <Loading/>
+      )
+    }
     return (
       <div className="carousel-wrapper">
 
