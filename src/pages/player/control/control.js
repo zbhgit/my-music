@@ -174,7 +174,8 @@ class Control extends Component {
 
   // 下一首
 
-  audioNextSong() {
+  audioNextSong(ev) {
+    ev.stopPropagation()
     const {changeSongId} = this.props;
     const {currentIndex, playlist, turn} = this.state;
     const len = playlist.length;
@@ -183,7 +184,6 @@ class Control extends Component {
       nextIndex = (currentIndex + Math.floor(Math.random() * len)) % len
     } else {
       nextIndex = (currentIndex + 1) % len;
-      console.log(currentIndex)
     }
     this.setState({
       currentIndex: nextIndex
@@ -194,7 +194,8 @@ class Control extends Component {
 
   //  上一首
 
-  audioPrevSong() {
+  audioPrevSong(ev) {
+    ev.stopPropagation();
     let {currentIndex, playlist, turn} = this.state;
     const {changeSongId} = this.props;
     const len = playlist.length;
@@ -206,7 +207,6 @@ class Control extends Component {
         currentIndex = len
       }
       prevIndex = currentIndex - 1;
-      console.log(currentIndex)
     }
     this.setState({
       currentIndex: prevIndex
@@ -214,7 +214,8 @@ class Control extends Component {
     const prevSongId = playlist[prevIndex].id;
     changeSongId(prevSongId);
   }
-  onHandlePlay() {
+  onHandlePlay(ev) {
+    ev.stopPropagation();
     const {setAudioPlayOrPause, playing} = this.props;
     if (playing) {
       this.audioPause(audio);
@@ -228,11 +229,8 @@ class Control extends Component {
   // 获取当前播放歌曲index
   getCurrentPlayIndex() {
     const {songlist} = this.props;
-    console.log(songlist.length);
     const {songId} = this.props;
     for (let i = 0; i < songlist.length; i++) {
-      console.log(parseInt(songlist[i].id, 10))
-      console.log(parseInt(songId, 10))
       if (parseInt(songlist[i].id, 10) === parseInt(songId, 10)) {
         this.setState({
           currentIndex: i
@@ -243,7 +241,8 @@ class Control extends Component {
   }
 
   // 更改播放顺序
-  onHandleTurn() {
+  onHandleTurn(ev) {
+    ev.stopPropagation()
     const {turn, songlist, playlist} = this.state;
     if (turn === 'order') {
       this.setState({

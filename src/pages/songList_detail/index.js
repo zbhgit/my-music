@@ -6,7 +6,13 @@ import DetailHeader from  'components/detail_header/header'
 import Detail from './detail/detail'
 import DetailList from './detail_list/detail_list'
 import {getSongListDetail} from '../../api/song'
-export default class SongDetail extends Component {
+
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {setSonglist} from '../../actions/index'
+
+
+class SongDetail extends Component {
   constructor(props) {
     super(props);
     this._getSongListData = this._getSongListData.bind(this);
@@ -51,6 +57,7 @@ export default class SongDetail extends Component {
   // 处理sq数据
   insertSqData(privileges, tracks) {
     const len = tracks.length;
+    const {setSonglist} = this.props;
     for (let i = 0; i < len; i++) {
       const {maxbr} = privileges[i];
       Object.assign(tracks[i], {
@@ -61,7 +68,8 @@ export default class SongDetail extends Component {
       Object.assign(this.state,{
         tracks: tracks
       })
-    )
+    );
+    setSonglist(tracks)
   }
 
   render() {
@@ -80,3 +88,9 @@ export default class SongDetail extends Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  setSonglist: bindActionCreators(setSonglist, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(SongDetail)

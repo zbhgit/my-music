@@ -13,6 +13,7 @@ class Item extends Component {
     this.onHandleClick = this.onHandleClick.bind(this);
   }
   onHandleClick(event) {
+    event.stopPropagation();
     const id = event.target.getAttribute('data-id');
     const isShow = true;
     const { changeSongId, setPlayerShow} = this.props;

@@ -11,8 +11,11 @@ import {sortArtists,} from 'util/util'
 
 import {hotData} from './hot'
 
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {setSonglist} from '../../../actions/index'
 
-export default class HotSearch extends Component {
+class HotSearch extends Component {
   constructor(props) {
     super(props);
     this.onHandleClick = this.onHandleClick.bind(this);
@@ -55,13 +58,15 @@ export default class HotSearch extends Component {
 
   // 获取歌曲数据
   _getSearchSongData(keyword) {
+    const {setSonglist} = this.props
     getSearchSongData(keyword)
       .then((response) => {
         if (response.code === 200) {
           this.setState(Object.assign(this.state, {
             songs: response.result.songs,
             hasData: true
-          }))
+          }));
+          setSonglist(response.result.songs)
         }
       })
   }
@@ -70,6 +75,7 @@ export default class HotSearch extends Component {
     const value = event.target.innerHTML;
     this.props.onHandleHotClick(value)
   }
+
   render() {
     const {artist, songs, hasData} = this.state;
     const singer = {
@@ -118,3 +124,8 @@ export default class HotSearch extends Component {
 
   }
 }
+const mapDispatchToProps = dispatch => ({
+  setSonglist: bindActionCreators(setSonglist, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(HotSearch)

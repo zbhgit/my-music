@@ -6,73 +6,100 @@
   border-top: 1px solid #323337;
   position: relative;
   transition: 5s;
-  .cd-wrapper {
-    height:70.5vh;
-    display: none;
-    .half {
-      position: absolute;
-      left: 50%;
-      top: -1px;
-      transform: translateX(-50%);
-      width: 26px;
-      z-index: 5;
-    }
-    .needle {
-      position: absolute;
-      left: 50%;
-      transform-origin: 2px -6px;
-      margin-left: -6px;
-      top: 6px;
-      width: auto;
-      height: 150px;
-      z-index: 4;
-    }
-    .circle-cd {
-      position: relative;
-      top:80px;
-      margin: 0 auto;
-      width: 305px;
-      height: 305px;
-      border-radius: 50%;
-      overflow: hidden;
-      img {
+  .lyric {
+    flex: 0 0 75vh;
+    .cd-wrapper {
+      height:70.5vh;
+      padding-bottom:10px;
+      transition: 0.5s;
+      .half {
         position: absolute;
-        width: 100%;
-        &:first-child {
-          z-index: 1;
+        left: 50%;
+        top: -1px;
+        transform: translateX(-50%);
+        width: 26px;
+        z-index: 5;
+      }
+      .needle {
+        position: absolute;
+        left: 50%;
+        transform-origin: 2px -6px;
+        margin-left: -6px;
+        top: 6px;
+        width: auto;
+        height: 150px;
+        z-index: 4;
+        transition: all .5s;
+        &.pause {
+          transform: rotate(-30deg);
         }
-        &:nth-child(2) {
-          z-index: 2;
+        &.play {
+          transform: rotate(0deg);
         }
-        &:last-child {
-          z-index: 3;
+      }
+      .circle-cd {
+        position: relative;
+        top:80px;
+        margin: 0 auto;
+        width: 305px;
+        height: 305px;
+        border-radius: 50%;
+        overflow: hidden;
+        &.rotating {
+          animation: cdRotate 20s infinite linear;
+        }
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 100%;
+          transform: translate3d(-50%,-50%,0);
+          &:first-child {
+            z-index: 1;
+            width: 65%;
+          }
+          &:nth-child(2) {
+            z-index: 2;
+          }
+          &:last-child {
+            z-index: 3;
+          }
+        }
+      }
+    }
+    .lyric-wrapper {
+      height:61.5vh;
+      color: #fff;
+      padding-top: 30px;
+      margin-top:40px;
+      margin-bottom:40px;
+      transition:.5s;
+      overflow: hidden;
+      ul {
+        text-align: center;
+        padding:0 20px;
+        font-size:13px;
+        line-height:43px;
+        transition:.2s;
+        li {
+          color: #cdc9ca;
+          height:43px;
+          &.current {
+            color: #ffffff;
+            font-size:14px;
+          }
         }
       }
     }
   }
-  .lyric-wrapper {
-    height:61.5vh;
-    color: #fff;
-    padding-top: 30px;
-    margin-top:40px;
-    padding-bottom: 10px;
-    margin-bottom:40px;
-    transition:.5s;
-    overflow: hidden;
-    ul {
-      text-align: center;
-      padding:0 20px;
-      font-size:13px;
-      line-height:43px;
-      transition:.2s;
-      li {
-        color: #cdc9ca;
-        height:43px;
-        &.current {
-          color: #ffffff;
-          font-size:14px;
-        }
-      }
-    }
+
+}
+
+@keyframes cdRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
