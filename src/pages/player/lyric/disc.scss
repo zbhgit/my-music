@@ -1,11 +1,13 @@
 .disc {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   overflow: hidden;
   border-top: 1px solid #323337;
   position: relative;
   transition: 5s;
   .cd-wrapper {
-    height:73.5vh;
+    height:70.5vh;
     display: none;
     .half {
       position: absolute;
@@ -51,17 +53,21 @@
   .lyric-wrapper {
     height:73.5vh;
     color: #fff;
-    padding-top: 70px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    margin-top:40px;
+    padding-bottom: 10px;
+    margin-bottom:40px;
+    transition:.5s;
+    overflow: hidden;
     ul {
-      height:100%;
-      overflow: hidden;
       text-align: center;
       padding:0 20px;
       font-size:13px;
       line-height:43px;
+      transition:.2s;
       li {
         color: #cdc9ca;
+        height:43px;
         &.current {
           color: #ffffff;
           font-size:14px;

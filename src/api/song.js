@@ -45,7 +45,6 @@ function _getSongLyric(id) {
   };
   return axios.get(url, {params: data})
     .then((response) => {
-    console.log(response.data);
       return Promise.resolve(response.data);
     })
 }

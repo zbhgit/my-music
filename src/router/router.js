@@ -4,7 +4,7 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
+// import {bindActionCreators} from 'redux'
 import Home from '../pages/home'
 import HotSinger from '../pages/hot_singer'
 import SingerDetail from '../pages/singer/'

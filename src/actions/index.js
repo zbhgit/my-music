@@ -4,3 +4,5 @@
 export const changeSongId = (id) => ({type: "SONG_ID", id});
 
 export const setPlayerShow = (isShow) =>({type: "IS_SHOW",isShow});
+
+export const setAudioCurrentTime = (currentTime) => ({type: "SET_TIME",currentTime});
