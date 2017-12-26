@@ -3,6 +3,8 @@
  */
 import React, {Component} from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
 import Home from '../pages/home'
 import HotSinger from '../pages/hot_singer'
 import SingerDetail from '../pages/singer/'
@@ -10,10 +12,13 @@ import Rank from '../pages/rank'
 import Search from '../pages/search'
 import Player from '../pages/player'
 import SongDetail from '../pages/songList_detail'
-export default class RouterMap extends Component {
+ class RouterMap extends Component {
   render() {
+    const {isShow} = this.props;
+    const height = isShow ? '100vh' :'auto';
     const relative = {
       width: '100%',
+      height:height,
       position: 'relative',
       overflow: 'hidden'
     };
@@ -32,3 +37,13 @@ export default class RouterMap extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    isShow:state.playerShow.isShow
+  }
+};
+export default connect(
+  mapStateToProps,
+  null
+)(RouterMap)

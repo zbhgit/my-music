@@ -6,7 +6,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {changeSongId} from '../../actions/index'
+import {changeSongId,setPlayerShow} from '../../actions/index'
 class Item extends Component {
   constructor(props) {
     super(props);
@@ -14,8 +14,10 @@ class Item extends Component {
   }
   onHandleClick(event) {
     const id = event.target.getAttribute('data-id');
-    const { changeSongId} = this.props;
+    const isShow = true;
+    const { changeSongId, setPlayerShow} = this.props;
     changeSongId(id);
+    setPlayerShow(isShow)
   }
   render() {
     const {name, artist, album, sq, alias, id} = this.props;
@@ -48,16 +50,11 @@ Item.propTypes = {
   id: PropTypes.number
 };
 
-// const mapStateToProps = (state) => {
-//   return {
-//     status: state.userinfo.status,
-//     error: state.userinfo.error
-//   }
-// }
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeSongId: bindActionCreators(changeSongId, dispatch)
-
+    changeSongId: bindActionCreators(changeSongId, dispatch),
+    setPlayerShow: bindActionCreators(setPlayerShow, dispatch)
   }
 };
 export default connect(

@@ -13,7 +13,7 @@ export default class SingerSong extends Component {
             return (
               <li key={song.id} data-songid={song.id} className="singer_song-item">
                 <span className="index">{index += 1}</span>
-                <Item alias={song.alia[0]} name={song.name} album={song.al.name} sq={song.privilege.maxbr === 999000}/>
+                <Item id={song.id} alias={song.alia[0]} name={song.name} album={song.al.name} sq={song.privilege.maxbr === 999000}/>
               </li>
             )
           })}

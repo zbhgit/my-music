@@ -31,3 +31,18 @@ export function setEllipsis(str) {
   let newStr = str.slice(0,14).concat('...');
   return newStr;
 }
+
+//  将时间转换成 00:23 ,接收毫秒
+export function formatTime(num) {
+  num = parseInt(num,10);
+  const iM = Math.floor(num % 3600 / 60);
+  const iS = Math.floor(num % 60);
+  return `${_addZero(iM)}:${_addZero(iS)}`;
+}
+function _addZero(num) {
+  if (num < 10) {
+    return '0' + num
+  } else {
+    return '' + num
+  }
+}

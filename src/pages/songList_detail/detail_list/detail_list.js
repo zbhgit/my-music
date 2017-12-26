@@ -20,7 +20,7 @@ export default class DetailList extends Component {
             return (
               <li key={track.id} data-id={track.id} className="item_wrapper">
                 <span className="index">{index += 1}</span>
-                <Item name={track.name} album={track.al.name} artist={track.ar[0].name} sq={track.maxbr === 999000}/>
+                <Item id={track.id} name={track.name} album={track.al.name} artist={track.ar[0].name} sq={track.maxbr === 999000}/>
               </li>
             )
           })}
