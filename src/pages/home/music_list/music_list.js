@@ -2,14 +2,19 @@ import React, {Component} from 'react';
 import Item from 'components/song_item/item';
 import Title from 'components/title/title';
 import {getRecommendPlaylist, getNewSongs} from '../../../api/home'
-import {formatCount,sortArtists,setEllipsis} from 'util/util'
+import {formatCount, sortArtists, setEllipsis} from 'util/util'
 import {NavLink} from 'react-router-dom'
 import Loading from 'components/loading/loading'
+
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {setSonglist} from '../../../actions/index'
 
 import './music_list.scss'
 class MusicList extends Component {
   constructor(props) {
     super(props);
+    this._setSonglist = this._setSonglist.bind(this);
     this.state = {
       playLists: [],
       newSongs: []
@@ -20,27 +25,35 @@ class MusicList extends Component {
     this._getRecommendPlaylist();
     this._getNewSongs();
   }
+
   // 获取推荐歌单
   _getRecommendPlaylist() {
     getRecommendPlaylist()
       .then(response => {
         if (response.code === 200) {
-          this.setState(Object.assign(this.state,{
+          this.setState(Object.assign(this.state, {
             playLists: response.playlists
           }))
         }
       })
   }
+
   // 获取最新音乐
   _getNewSongs() {
     getNewSongs()
       .then(response => {
         if (response.code === 200) {
-          this.setState(Object.assign(this.state,{
+          this.setState(Object.assign(this.state, {
             newSongs: response.result
-          }))
+          }));
+          this._setSonglist(response.result);
         }
       })
+  }
+
+  _setSonglist(data) {
+    const {setSonglist} = this.props;
+    setSonglist(data)
   }
 
   render() {
@@ -57,7 +70,7 @@ class MusicList extends Component {
           </NavLink>
         )
       });
-    if(newSongs.length === 0) {
+    if (newSongs.length === 0) {
       return (
         <Loading/>
       )
@@ -99,4 +112,9 @@ class MusicList extends Component {
   }
 }
 
-export default MusicList
+
+const mapDispatchToProps = dispatch => ({
+  setSonglist: bindActionCreators(setSonglist, dispatch)
+});
+
+export default connect(null, mapDispatchToProps)(MusicList)

@@ -76,11 +76,7 @@ class Disc extends Component {
 
   render() {
     const {lyric, url} = this.props;
-    const {activeIndex,scrollIndex} = this.state;
-
-    // const wrapperStyle = {
-    //
-    // };
+    const {activeIndex} = this.state;
 
     if (!lyric) {
       return <Loading/>

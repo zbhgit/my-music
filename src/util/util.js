@@ -28,13 +28,13 @@ export function sortArtists(artists) {
 }
 // 添加省略号
 export function setEllipsis(str) {
-  let newStr = str.slice(0,14).concat('...');
+  let newStr = str.slice(0, 14).concat('...');
   return newStr;
 }
 
 //  将时间转换成 00:23 ,接收毫秒
 export function formatTime(num) {
-  num = parseInt(num,10);
+  num = parseInt(num, 10);
   const iM = Math.floor(num % 3600 / 60);
   const iS = Math.floor(num % 60);
   return `${_addZero(iM)}:${_addZero(iS)}`;
@@ -46,3 +46,15 @@ function _addZero(num) {
     return '' + num
   }
 }
+
+
+export const shuffle = function (arr) {
+  let input = arr;
+  for (let i = input.length - 1; i >= 0; i--) {
+    let randomIndex = Math.floor(Math.random() * (i + 1));
+    let itemAtIndex = input[randomIndex];
+    input[randomIndex] = input[i];
+    input[i] = itemAtIndex;
+  }
+  return input;
+};

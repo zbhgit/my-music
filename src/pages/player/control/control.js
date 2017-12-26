@@ -3,11 +3,11 @@
  */
 import React, {Component} from 'react'
 import './control.scss'
-import {formatTime} from 'util/util'
+import {formatTime, shuffle} from 'util/util'
 
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {setAudioCurrentTime,setAudioPlayOrPause} from '../../../actions/index'
+import {setAudioCurrentTime, setAudioPlayOrPause,changeSongId} from '../../../actions/index'
 
 // 设置鼠标按下 移动 抬起事件
 const isMobile = /Mobile/i.test(navigator.userAgent);
@@ -48,20 +48,26 @@ class Control extends Component {
     this.audioPause = this.audioPause.bind(this);
     this.audioPlay = this.audioPlay.bind(this);
     this.onHandlePlay = this.onHandlePlay.bind(this);
+    // this.setTurnList = this.setTurnList.bind(this);
+    this.onHandleTurn = this.onHandleTurn.bind(this);
+    this.getCurrentPlayIndex = this.getCurrentPlayIndex.bind(this);
+    this.audioNextSong = this.audioNextSong.bind(this);
+    this.audioPrevSong = this.audioPrevSong.bind(this);
     this.state = {
       currentTime: '00:00',
       totalTime: '00:00',
       persent: '0%',
-      playList: [],
-      songList: [],
+      songlist: [],
+      playlist: [],
       currentIndex: 0,
-      playing: false
+      playing: false,
+      turn: 'order',
+      icon: 'icon-order'
     }
   }
 
   componentDidMount() {
     const self = this;
-
     audio = document.querySelector('#audio');
     audio.addEventListener('playing', () => {
       clearInterval(timer);
@@ -72,14 +78,24 @@ class Control extends Component {
           currentTime: currentTime,
           persent: `${scale * 100}%`
         });
-        const { setAudioCurrentTime } = self.props;
+        const {setAudioCurrentTime} = self.props;
         setAudioCurrentTime(audio.currentTime)
       }, 1000)
     });
+    audio.addEventListener('canplaythrough', () => {
+      self.audioPlay(audio)
+    });
+    audio.addEventListener('pause', () => {
+      clearInterval(timer);
+    });
+    audio.addEventListener('ended', () => {
+      self.audioNextSong();
+    });
+
     const barControl = document.querySelector('.bar-circle');
     const barWrapper = document.querySelector('.bar-wrapper');
     barFrond = document.querySelector('.bar-frond');
-    const {url} = this.props;
+    const {url, songlist} = this.props;
     if (url) {
       barWidth = barWrapper.offsetWidth;
       setTimeout(() => {
@@ -87,6 +103,11 @@ class Control extends Component {
         this.scrollBar(barControl);
       }, 500)
     }
+    this.getCurrentPlayIndex();
+    this.setState({
+      playlist: JSON.parse(JSON.stringify(songlist)),
+      songlist: songlist
+    });
   }
 
   scrollBar(barControl) {
@@ -137,19 +158,65 @@ class Control extends Component {
 
   // 播放
 
-  audioPlay(audio) {
-    audio.play();
-    console.log('play')
+  audioPlay(el) {
+    const {setAudioPlayOrPause} = this.props;
+    el.play();
+    setAudioPlayOrPause(true)
   }
-  // 暂停
-  audioPause(audio) {
-    audio.pause();
-    console.log('pause')
 
+  // 暂停
+  audioPause(el) {
+    const {setAudioPlayOrPause} = this.props;
+    el.pause();
+    setAudioPlayOrPause(false)
+  }
+
+
+  // 下一首
+
+  audioNextSong() {
+    const {changeSongId} = this.props;
+    const {currentIndex, playlist, turn} = this.state;
+    const len = playlist.length;
+    let nextIndex;
+    if (turn === 'random') {
+      nextIndex = (currentIndex + Math.floor(Math.random() * len)) % len
+    } else {
+      nextIndex = (currentIndex + 1) % len;
+      console.log(currentIndex)
+    }
+    this.setState({
+      currentIndex: nextIndex
+    });
+    const nextSongId = playlist[nextIndex].id;
+    changeSongId(nextSongId);
+  }
+
+  //  上一首
+
+  audioPrevSong() {
+    let {currentIndex, playlist, turn} = this.state;
+    const {changeSongId} = this.props;
+    const len = playlist.length;
+    let prevIndex;
+    if (turn === 'random') {
+      prevIndex = (currentIndex + Math.floor(Math.random() * len)) % len
+    } else {
+      if(currentIndex === 0) {
+        currentIndex = len
+      }
+      prevIndex = currentIndex - 1;
+      console.log(currentIndex)
+    }
+    this.setState({
+      currentIndex: prevIndex
+    });
+    const prevSongId = playlist[prevIndex].id;
+    changeSongId(prevSongId);
   }
   onHandlePlay() {
-    const {setAudioPlayOrPause,playing} = this.props;
-    if(playing) {
+    const {setAudioPlayOrPause, playing} = this.props;
+    if (playing) {
       this.audioPause(audio);
       setAudioPlayOrPause(!playing)
     } else {
@@ -157,6 +224,50 @@ class Control extends Component {
       setAudioPlayOrPause(!playing)
     }
   }
+
+  // 获取当前播放歌曲index
+  getCurrentPlayIndex() {
+    const {songlist} = this.props;
+    console.log(songlist.length);
+    const {songId} = this.props;
+    for (let i = 0; i < songlist.length; i++) {
+      console.log(parseInt(songlist[i].id, 10))
+      console.log(parseInt(songId, 10))
+      if (parseInt(songlist[i].id, 10) === parseInt(songId, 10)) {
+        this.setState({
+          currentIndex: i
+        });
+        return;
+      }
+    }
+  }
+
+  // 更改播放顺序
+  onHandleTurn() {
+    const {turn, songlist, playlist} = this.state;
+    if (turn === 'order') {
+      this.setState({
+        turn: 'random',
+        icon: 'icon-random',
+        playlist: shuffle(playlist)
+      })
+    } else if (turn === 'random') {
+      this.setState({
+        turn: 'single',
+        icon: 'icon-single',
+        playlist: JSON.parse(JSON.stringify(songlist))
+
+      })
+    } else {
+      this.setState({
+        turn: 'order',
+        icon: 'icon-order',
+        playlist: JSON.parse(JSON.stringify(songlist))
+      })
+    }
+
+  }
+
 
   initTime() {
     const totalTime = formatTime(audio.duration);
@@ -166,9 +277,9 @@ class Control extends Component {
   }
 
   render() {
-    const {url,playing} = this.props;
-    const {totalTime, currentTime, persent} = this.state;
-    const playIcon = `icon iconfont ${playing ? 'icon-pause' :'icon-play01'}`;
+    const {url, playing} = this.props;
+    const {totalTime, currentTime, persent, icon} = this.state;
+    const playIcon = `icon iconfont ${playing ? 'icon-pause' : 'icon-play01'}`;
     const circleStyle = {
       left: `${barWidth * parseFloat(persent) / 100}px`
     };
@@ -188,10 +299,10 @@ class Control extends Component {
             <span className="total-time">{totalTime}</span>
           </div>
           <div className="control-button">
-            <span className="icon iconfont icon-loop"></span>
-            <span className="icon iconfont icon-prev"></span>
+            <span className={`icon iconfont ${icon}`} onClick={this.onHandleTurn}></span>
+            <span className="icon iconfont icon-prev" onClick={this.audioPrevSong}></span>
             <span className={playIcon} onClick={this.onHandlePlay}></span>
-            <span className="icon iconfont icon-next"></span>
+            <span className="icon iconfont icon-next" onClick={this.audioNextSong}></span>
             <span className="icon iconfont icon-play-list"></span>
           </div>
         </div>
@@ -203,13 +314,17 @@ class Control extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    playing: state.playing.playing
+    playing: state.playing.playing,
+    songlist: state.songlist.songlist,
+    songId: state.player.id
+
   }
 };
 
 const mapDispatchToProps = (dispatch) => ({
   setAudioCurrentTime: bindActionCreators(setAudioCurrentTime, dispatch),
-  setAudioPlayOrPause: bindActionCreators(setAudioPlayOrPause, dispatch)
+  setAudioPlayOrPause: bindActionCreators(setAudioPlayOrPause, dispatch),
+  changeSongId: bindActionCreators(changeSongId, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Control)

@@ -6,14 +6,15 @@ import player from './palyer'
 import playerShow from './player_show'
 import currentTime from './current_time'
 import playing from './playing'
-
+import songlist from './songlist'
 
 // 合并多个reducer
 const rootReducer = combineReducers({
   player,
   playerShow,
   currentTime,
-  playing
+  playing,
+  songlist
 });
 
 export default rootReducer

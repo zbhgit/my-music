@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-ttpodicon:before { content: "\e614"; }
+.icon-single:before { content: "\e614"; }
 
 .icon-delete:before { content: "\e625"; }
 
@@ -37,9 +37,9 @@
 
 .icon-add:before { content: "\e637"; }
 
-.icon-loop:before { content: "\e64c"; }
+.icon-random:before { content: "\e64c"; }
 
-.icon-loop1:before { content: "\e6ae"; }
+.icon-order:before { content: "\e6ae"; }
 
 .icon-prev:before { content: "\e61e"; }
 
