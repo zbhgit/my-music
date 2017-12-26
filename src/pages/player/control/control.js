@@ -7,7 +7,7 @@ import {formatTime} from 'util/util'
 
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {setAudioCurrentTime} from '../../../actions/index'
+import {setAudioCurrentTime,setAudioPlayOrPause} from '../../../actions/index'
 
 // 设置鼠标按下 移动 抬起事件
 const isMobile = /Mobile/i.test(navigator.userAgent);
@@ -45,6 +45,9 @@ class Control extends Component {
     this.scrollBar = this.scrollBar.bind(this);
     this.setCurrentPersent = this.setCurrentPersent.bind(this);
     this.setAudioCurrentTime = this.setAudioCurrentTime.bind(this);
+    this.audioPause = this.audioPause.bind(this);
+    this.audioPlay = this.audioPlay.bind(this);
+    this.onHandlePlay = this.onHandlePlay.bind(this);
     this.state = {
       currentTime: '00:00',
       totalTime: '00:00',
@@ -132,6 +135,28 @@ class Control extends Component {
     audio.currentTime = scale * audio.duration;
   }
 
+  // 播放
+
+  audioPlay(audio) {
+    audio.play();
+    console.log('play')
+  }
+  // 暂停
+  audioPause(audio) {
+    audio.pause();
+    console.log('pause')
+
+  }
+  onHandlePlay() {
+    const {setAudioPlayOrPause,playing} = this.props;
+    if(playing) {
+      this.audioPause(audio);
+      setAudioPlayOrPause(!playing)
+    } else {
+      this.audioPlay(audio);
+      setAudioPlayOrPause(!playing)
+    }
+  }
 
   initTime() {
     const totalTime = formatTime(audio.duration);
@@ -141,8 +166,9 @@ class Control extends Component {
   }
 
   render() {
-    const {url} = this.props;
+    const {url,playing} = this.props;
     const {totalTime, currentTime, persent} = this.state;
+    const playIcon = `icon iconfont ${playing ? 'icon-pause' :'icon-play01'}`;
     const circleStyle = {
       left: `${barWidth * parseFloat(persent) / 100}px`
     };
@@ -164,19 +190,26 @@ class Control extends Component {
           <div className="control-button">
             <span className="icon iconfont icon-loop"></span>
             <span className="icon iconfont icon-prev"></span>
-            <span className="icon iconfont icon-play01" onClick={this.onHandlePlay}></span>
+            <span className={playIcon} onClick={this.onHandlePlay}></span>
             <span className="icon iconfont icon-next"></span>
             <span className="icon iconfont icon-play-list"></span>
           </div>
         </div>
-        <audio id="audio" src={url} autoPlay></audio>
+        <audio id="audio" src={url}></audio>
       </div>
     )
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    playing: state.playing.playing
+  }
+};
+
 const mapDispatchToProps = (dispatch) => ({
-  setAudioCurrentTime: bindActionCreators(setAudioCurrentTime, dispatch)
+  setAudioCurrentTime: bindActionCreators(setAudioCurrentTime, dispatch),
+  setAudioPlayOrPause: bindActionCreators(setAudioPlayOrPause, dispatch)
 });
 
-export default connect(null, mapDispatchToProps)(Control)
+export default connect(mapStateToProps, mapDispatchToProps)(Control)

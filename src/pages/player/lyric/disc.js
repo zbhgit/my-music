@@ -49,7 +49,6 @@ class Disc extends Component {
           activeIndex: i
         });
         if (i > 5) {
-          console.log(i);
           this.setState({
             scrollIndex: i
           });

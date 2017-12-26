@@ -5,13 +5,15 @@ import { combineReducers } from 'redux'
 import player from './palyer'
 import playerShow from './player_show'
 import currentTime from './current_time'
+import playing from './playing'
 
 
 // 合并多个reducer
 const rootReducer = combineReducers({
   player,
   playerShow,
-  currentTime
+  currentTime,
+  playing
 });
 
 export default rootReducer
