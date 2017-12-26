@@ -89,27 +89,41 @@ class Control extends Component {
       clearInterval(timer);
     });
     audio.addEventListener('ended', () => {
-      self.audioNextSong();
+
     });
 
+    // const barControl = document.querySelector('.bar-circle');
+    // const barWrapper = document.querySelector('.bar-wrapper');
+    // barFrond = document.querySelector('.bar-frond');
+    // const {url, songlist} = this.props;
+    // if (url) {
+    //   barWidth = barWrapper.offsetWidth;
+    //   setTimeout(() => {
+    //     this.initTime();
+    //     this.scrollBar(barControl);
+    //   }, 500)
+    // }
     const barControl = document.querySelector('.bar-circle');
-    const barWrapper = document.querySelector('.bar-wrapper');
-    barFrond = document.querySelector('.bar-frond');
-    const {url, songlist} = this.props;
-    if (url) {
-      barWidth = barWrapper.offsetWidth;
-      setTimeout(() => {
-        this.initTime();
-        this.scrollBar(barControl);
-      }, 500)
-    }
+    const {songlist} = this.props;
+    this.scrollBar(barControl);
     this.getCurrentPlayIndex();
     this.setState({
       playlist: JSON.parse(JSON.stringify(songlist)),
       songlist: songlist
     });
   }
-
+  componentDidUpdate() {
+    const barWrapper = document.querySelector('.bar-wrapper');
+    barFrond = document.querySelector('.bar-frond');
+    const {url} = this.props;
+    if (url) {
+      barWidth = barWrapper.offsetWidth;
+      setTimeout(() => {
+        this.initTime();
+      }, 500)
+    }
+  }
+  // 控制条控制
   scrollBar(barControl) {
     const self = this;
     barControl.addEventListener(touchstart, function (ev) {
@@ -175,7 +189,6 @@ class Control extends Component {
   // 下一首
 
   audioNextSong(ev) {
-    ev.stopPropagation()
     const {changeSongId} = this.props;
     const {currentIndex, playlist, turn} = this.state;
     const len = playlist.length;
@@ -190,6 +203,10 @@ class Control extends Component {
     });
     const nextSongId = playlist[nextIndex].id;
     changeSongId(nextSongId);
+    setTimeout(()=>{
+      this.audioPlay(audio)
+    },1000);
+
   }
 
   //  上一首
@@ -213,6 +230,11 @@ class Control extends Component {
     });
     const prevSongId = playlist[prevIndex].id;
     changeSongId(prevSongId);
+  }
+
+
+  getNextIndex() {
+
   }
   onHandlePlay(ev) {
     ev.stopPropagation();

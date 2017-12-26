@@ -101,7 +101,7 @@ class Disc extends Component {
                className="cd-wrapper">
             <img className="half" src={half_circle} alt=""/>
             <img className={`needle ${playing ? 'play' : 'pause' }`} src={needle_fix} alt=""/>
-            <div style={style} className="circle-cd rotating">
+            <div style={style} className={`circle-cd ${playing ? 'rotating': '' }`}>
               <img src={lyric.picUrl || defaultImg} alt=""/>
               <img src={discImg} alt=""/>
               <img src={disc_light} alt=""/>
