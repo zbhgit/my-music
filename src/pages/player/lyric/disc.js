@@ -32,7 +32,13 @@ class Disc extends Component {
   componentDidMount() {
     lyricItem = document.querySelector('.lyric_item');
     lyricUl = document.querySelector('#lyric');
-    liHeight = lyricItem.offsetHeight;
+  }
+  componentDidUpdate() {
+    if(!liHeight) {
+      liHeight = lyricItem.offsetHeight;
+    }
+
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -54,7 +60,7 @@ class Disc extends Component {
   scrollLyric(currentTime) {
     const {lyricArr} = this.state;
     for (let i = 0; i < lyricArr.length; i++) {
-      if (i !== lyricArr.length - 1 && currentTime > lyricArr[i][0] && currentTime < lyricArr[i + 1][0]) {
+      if (i !== lyricArr.length - 1 && currentTime > parseFloat(lyricArr[i][0]) && currentTime < parseFloat(lyricArr[i + 1][0])) {
         this.setState({
           activeIndex: i
         });
@@ -62,11 +68,9 @@ class Disc extends Component {
           this.setState({
             scrollIndex: i
           });
-          // $detailsLyricUl.css('transform','translate3d(0,'+(-iLiH*(i-3))+'px,0)');
           lyricUl.style.transform = `translate3d(0,${(-liHeight * (i - 3))}px,0)`
         }
         else {
-          // $detailsLyricUl.css('transform','translate3d(0,0,0)');
           lyricUl.style.transform = `translate3d(0,0,0)`
         }
       }
