@@ -84,45 +84,35 @@ class Control extends Component {
       }, 1000)
     });
     audio.addEventListener('canplaythrough', () => {
-      self.audioPlay(audio)
+      self.audioPlay(audio);
+      self.setState({
+        totalTime: formatTime(audio.duration)
+      })
     });
     audio.addEventListener('pause', () => {
       clearInterval(timer);
     });
     audio.addEventListener('ended', () => {
-    self.audioNextSong()
+    self.autoPlayNextSong(audio)
     });
 
-    // const barControl = document.querySelector('.bar-circle');
-    // const barWrapper = document.querySelector('.bar-wrapper');
-    // barFrond = document.querySelector('.bar-frond');
-    // const {url, songlist} = this.props;
-    // if (url) {
-    //   barWidth = barWrapper.offsetWidth;
-    //   setTimeout(() => {
-    //     this.initTime();
-    //     this.scrollBar(barControl);
-    //   }, 500)
-    // }
     const barControl = document.querySelector('.bar-circle');
-    const {songlist} = this.props;
+    const barWrapper = document.querySelector('.bar-wrapper');
+    barFrond = document.querySelector('.bar-frond');
+    const {url, songlist} = this.props;
+    if (url) {
+      barWidth = barWrapper.offsetWidth;
+      setTimeout(() => {
+        this.initTime();
+        this.scrollBar(barControl);
+      }, 500)
+    }
     this.scrollBar(barControl);
     this.getCurrentPlayIndex();
     this.setState({
       playlist: JSON.parse(JSON.stringify(songlist)),
       songlist: songlist
     });
-  }
-  componentDidUpdate() {
-    const barWrapper = document.querySelector('.bar-wrapper');
-    barFrond = document.querySelector('.bar-frond');
-    const {url} = this.props;
-    if (url) {
-      barWidth = barWrapper.offsetWidth;
-      setTimeout(() => {
-        this.initTime();
-      }, 500)
-    }
   }
   // 控制条控制
   scrollBar(barControl) {
@@ -233,7 +223,7 @@ class Control extends Component {
   }
 
   //  自动下一首
-  autoPlayNextSong() {
+  autoPlayNextSong(audio) {
     const {changeSongId} = this.props;
     const {currentIndex, playlist, turn} = this.state;
     const len = playlist.length;
