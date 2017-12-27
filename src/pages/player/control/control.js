@@ -53,6 +53,7 @@ class Control extends Component {
     this.getCurrentPlayIndex = this.getCurrentPlayIndex.bind(this);
     this.audioNextSong = this.audioNextSong.bind(this);
     this.audioPrevSong = this.audioPrevSong.bind(this);
+    this.autoPlayNextSong = this.autoPlayNextSong.bind(this);
     this.state = {
       currentTime: '00:00',
       totalTime: '00:00',
@@ -89,7 +90,7 @@ class Control extends Component {
       clearInterval(timer);
     });
     audio.addEventListener('ended', () => {
-
+    self.audioNextSong()
     });
 
     // const barControl = document.querySelector('.bar-circle');
@@ -189,6 +190,7 @@ class Control extends Component {
   // 下一首
 
   audioNextSong(ev) {
+    ev.stopPropagation();
     const {changeSongId} = this.props;
     const {currentIndex, playlist, turn} = this.state;
     const len = playlist.length;
@@ -203,9 +205,7 @@ class Control extends Component {
     });
     const nextSongId = playlist[nextIndex].id;
     changeSongId(nextSongId);
-    setTimeout(()=>{
-      this.audioPlay(audio)
-    },1000);
+    this.audioPlay(audio)
 
   }
 
@@ -232,6 +232,24 @@ class Control extends Component {
     changeSongId(prevSongId);
   }
 
+  //  自动下一首
+  autoPlayNextSong() {
+    const {changeSongId} = this.props;
+    const {currentIndex, playlist, turn} = this.state;
+    const len = playlist.length;
+    let nextIndex;
+    if (turn === 'random') {
+      nextIndex = (currentIndex + Math.floor(Math.random() * len)) % len
+    } else {
+      nextIndex = (currentIndex + 1) % len;
+    }
+    this.setState({
+      currentIndex: nextIndex
+    });
+    const nextSongId = playlist[nextIndex].id;
+    changeSongId(nextSongId);
+    this.audioPlay(audio)
+  }
 
   getNextIndex() {
 

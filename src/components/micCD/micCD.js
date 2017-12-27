@@ -13,20 +13,22 @@ class MicCD extends Component {
   }
   onHandleClick() {
     const {setPlayerShow,isShow} = this.props;
-    let show = !isShow;
-    setPlayerShow(show)
+    setPlayerShow(!isShow)
   }
   render() {
-    const {color} = this.props;
+    const {color,playing} = this.props;
+    const bgColor = color || "#333333";
+    const state = playing? 'running': 'paused';
     const style = {
-      background: color || "#333333"
+      background: bgColor,
+      animationPlayState:state
     };
     return (
-      <span onClick={this.onHandleClick} className="micCD">
-            <i style={style}></i>
-            <i style={style}></i>
-            <i style={style}></i>
-            <i style={style}></i>
+      <span onClick={this.onHandleClick} className="micCd">
+            <i className="one" style={style}></i>
+            <i className="two" style={style}></i>
+            <i  className="three" style={style}></i>
+            <i className="four"_ style={style}></i>
       </span>
     )
 
@@ -35,7 +37,8 @@ class MicCD extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    isShow: state.playerShow.isSHow
+    isShow: state.playerShow.isSHow,
+    playing: state.playing.playing
   }
 };
 
