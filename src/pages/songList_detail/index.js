@@ -34,42 +34,44 @@ class SongDetail extends Component {
     getSongListDetail(songListId)
       .then((response) => {
         if (response.code === 200) {
-          const {playlist, privileges} = response;
-          const {creator, tracks} = playlist;
+          const {result} = response;
+          const {creator, tracks} = result;
           let detail = {
-            coverImgUrl: playlist.coverImgUrl,
-            playCount: playlist.playCount,
-            name: playlist.name,
-            commentCount: playlist.commentCount,
-            shareCount: playlist.shareCount,
-            subscribedCount: playlist.subscribedCount
+            coverImgUrl: result.coverImgUrl,
+            playCount: result.playCount,
+            name: result.name,
+            commentCount: result.commentCount,
+            shareCount: result.shareCount,
+            subscribedCount: result.subscribedCount
           };
-          this.insertSqData(privileges,tracks);
+          this.insertSqData(tracks);
           this.setState(Object.assign(this.state, {
             creator: creator,
-            detail: detail
-          }))
+            detail: detail,
+            tracks: tracks
+          }));
         }
       })
       .catch(err => console.log(err))
   }
 
   // 处理sq数据
-  insertSqData(privileges, tracks) {
-    const len = tracks.length;
+  insertSqData(tracks) {
+    // const len = tracks.length;
     const {setSonglist} = this.props;
-    for (let i = 0; i < len; i++) {
-      const {maxbr} = privileges[i];
-      Object.assign(tracks[i], {
-        maxbr:maxbr
-      })
-    }
-    this.setState(
-      Object.assign(this.state,{
-        tracks: tracks
-      })
-    );
-    setSonglist(tracks)
+    // for (let i = 0; i < len; i++) {
+    //   const {maxbr} = privileges[i];
+    //   Object.assign(tracks[i], {
+    //     maxbr:maxbr
+    //   })
+    // }
+    // this.setState(
+    //   Object.assign(this.state,{
+    //     tracks: tracks
+    //   })
+    // );
+    setSonglist(tracks);
+    // console.log(tracks);
   }
 
   render() {

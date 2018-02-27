@@ -37,8 +37,6 @@ class Disc extends Component {
     if(!liHeight) {
       liHeight = lyricItem.offsetHeight;
     }
-
-
   }
 
   componentWillReceiveProps(nextProps) {

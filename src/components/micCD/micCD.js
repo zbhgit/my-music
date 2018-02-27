@@ -28,7 +28,7 @@ class MicCD extends Component {
             <i className="one" style={style}></i>
             <i className="two" style={style}></i>
             <i  className="three" style={style}></i>
-            <i className="four"_ style={style}></i>
+            <i className="four" style={style}></i>
       </span>
     )
 

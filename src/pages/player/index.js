@@ -30,10 +30,8 @@ class Player extends Component {
       };
 
       const url = response[2].data[0].url;
-
       const lyric = response[1].lrc && response[1].lrc.lyric ? response[1].lrc.lyric : "[00:00] 暂无暂无歌词";
       const lyricArr = this.formatLyric(lyric);
-
       this.setState({
         detail: detail,
         lyric: Object.assign({},{
