@@ -7,6 +7,7 @@ import playerShow from './player_show'
 import currentTime from './current_time'
 import playing from './playing'
 import songlist from './songlist'
+import { routerReducer } from 'react-router-redux'
 
 // 合并多个reducer
 const rootReducer = combineReducers({
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   playerShow,
   currentTime,
   playing,
-  songlist
+  songlist,
+  router: routerReducer
 });
 
 export default rootReducer

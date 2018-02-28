@@ -40,7 +40,8 @@ class Disc extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const {currentTime} = this.props;
+    const {currentTime} = nextProps;
+    console.log(currentTime);
     this.scrollLyric(currentTime)
   }
 
@@ -59,26 +60,25 @@ class Disc extends Component {
     const {lyricArr} = this.state;
     for (let i = 0; i < lyricArr.length; i++) {
       if (i !== lyricArr.length - 1 && currentTime > parseFloat(lyricArr[i][0]) && currentTime < parseFloat(lyricArr[i + 1][0])) {
-        this.setState({
-          activeIndex: i
-        });
+        let activeIndex = i;
+        let scrollIndex;
         if (i > 5) {
-          this.setState({
-            scrollIndex: i
-          });
+          scrollIndex = i;
           lyricUl.style.transform = `translate3d(0,${(-liHeight * (i - 3))}px,0)`
         }
         else {
           lyricUl.style.transform = `translate3d(0,0,0)`
         }
+        this.setState({
+          activeIndex: activeIndex,            
+          scrollIndex: scrollIndex
+        });
       }
       else if (i === lyricArr.length - 1 && currentTime > lyricArr[i][0]) {
         this.setState({
           activeIndex: i,
           scrollIndex: i
         });
-        // $li.eq(i).attr('class','active').siblings().attr('class','');
-        // $detailsLyricUl.css('transform','translate3d(0,'+(-iLiH*(i-3))+'px,0)');
         lyricUl.style.transform = `translate3d(0,${(-liHeight * (i - 3))}px,0)`
 
       }
@@ -117,7 +117,9 @@ class Disc extends Component {
                 lyric.lyricArr && lyric.lyricArr.map((item, index) => {
                   return (
                     <li key={index}
-                        className={ activeIndex === index ? "current lyric_item" : 'lyric_item'}>{item[1]}</li>
+                        className={ activeIndex === index ? "current lyric_item" : 'lyric_item'}
+                        data-time={item[0]}
+                        >{item[1]}</li>
                   )
                 })
               }

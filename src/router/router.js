@@ -4,6 +4,8 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {history} from '../store'
+import { ConnectedRouter } from 'react-router-redux'
 // import {bindActionCreators} from 'redux'
 import Home from '../pages/home'
 import HotSinger from '../pages/hot_singer'
@@ -23,7 +25,7 @@ import SongDetail from '../pages/songList_detail'
       overflow: 'hidden'
     };
     return (
-      <BrowserRouter>
+      <ConnectedRouter history={history}>
         <div style={relative}>
           <Route exact path="/" component={Home}/>
           <Route exact path="/singer" component={HotSinger}/>
@@ -33,7 +35,7 @@ import SongDetail from '../pages/songList_detail'
           <Route path="/song/:songListId" component={SongDetail}/>
           <Player/>
         </div>
-      </BrowserRouter>
+      </ConnectedRouter>
     )
   }
 }

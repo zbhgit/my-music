@@ -61,6 +61,7 @@ class Player extends Component {
   render() {
     const {isShow} = this.props;
     const {detail, lyric, url} = this.state;
+    console.log(lyric)
     const left = (isShow && lyric) ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)';
     const style = {
       position: 'absolute',
