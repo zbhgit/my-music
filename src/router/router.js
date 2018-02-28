@@ -2,7 +2,7 @@
  * Created by Z on 2017/12/23.
  */
 import React, {Component} from 'react'
-import {BrowserRouter, Route} from 'react-router-dom'
+import { Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {history} from '../store'
 import { ConnectedRouter } from 'react-router-redux'
